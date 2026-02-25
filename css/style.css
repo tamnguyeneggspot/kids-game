@@ -537,9 +537,19 @@ body {
 .btn-next {
   background: #6b4ce6;
   color: #fff;
+  padding: 0.75rem 1rem;
 }
 .btn-next:hover { background: #5a3dd4; transform: scale(1.05); }
 .btn-next:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
+.btn-next-icon {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+@media (max-width: 480px) {
+  .btn-next-icon { font-size: 1.75rem; }
+}
 
 /* ---- Hiệu ứng chúc mừng (đếm đúng) ---- */
 .celebration-wrap {

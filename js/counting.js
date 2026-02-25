@@ -107,6 +107,7 @@
       modeListen.classList.toggle('active', mode === 'listen');
       modeListen.setAttribute('aria-selected', mode === 'listen' ? 'true' : 'false');
     }
+    document.body.classList.toggle('mode-listen', isListen);
     if (scoreEl) scoreEl.style.display = isTraining ? 'none' : '';
     choicesEl.style.display = isTraining ? 'none' : '';
     feedbackEl.hidden = true;
@@ -262,6 +263,10 @@
           playListenQuestion();
         }, LISTEN_REPLAY_MS);
       }, 500);
+      if (btnListenPlay) {
+        if (document.activeElement && document.activeElement !== btnListenPlay) document.activeElement.blur();
+        setTimeout(function () { btnListenPlay.focus(); }, 0);
+      }
     }
   }
 
@@ -316,12 +321,19 @@
       feedbackEl.hidden = false;
       if (window.webGameSfx) window.webGameSfx.playWrong();
       if (gameMode === 'play') speak('Có ' + correctAnswer + ' cái.', 'vi-VN');
+      if (gameMode === 'listen') speak('Số ' + NUMBER_READINGS[correctAnswer] + '.', 'vi-VN');
       showWrongEffect();
       setTimeout(function () {
         score = 0;
         scoreEl.textContent = 'Điểm: 0';
         if (window.webGameDiem) window.webGameDiem.saveDiem(GAME_KEY, 0);
       }, 2500);
+      // Auto Tiếp theo khi chọn sai (giống khi đúng)
+      if (autoNextTimer) clearTimeout(autoNextTimer);
+      autoNextTimer = setTimeout(function () {
+        autoNextTimer = null;
+        showQuestion();
+      }, 3500);
     }
 
     btnNext.hidden = false;
@@ -379,6 +391,10 @@
       autoNextTimer = null;
     }
     showQuestion();
+    if (gameMode === 'listen' && btnListenPlay) {
+      if (document.activeElement && document.activeElement !== btnListenPlay) document.activeElement.blur();
+      setTimeout(function () { btnListenPlay.focus(); }, 0);
+    }
   });
 
   if (modePlay) modePlay.addEventListener('click', function () { setMode('play'); });

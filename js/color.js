@@ -211,6 +211,10 @@
         playListenQuestion();
       }, LISTEN_REPLAY_MS);
     }, 500);
+    if (btnListenPlay) {
+      if (document.activeElement && document.activeElement !== btnListenPlay) document.activeElement.blur();
+      setTimeout(function () { btnListenPlay.focus(); }, 0);
+    }
   }
 
   function stopAllReplay() {
@@ -258,6 +262,11 @@
         scoreEl.textContent = 'Điểm: 0';
         if (window.webGameDiem) window.webGameDiem.saveDiem(GAME_KEY, 0);
       }, 2500);
+      if (autoNextTimer) clearTimeout(autoNextTimer);
+      autoNextTimer = setTimeout(function () {
+        autoNextTimer = null;
+        showQuestion();
+      }, 3500);
     }
     btnNext.hidden = false;
     btnNext.focus();
@@ -314,6 +323,10 @@
       autoNextTimer = null;
     }
     showQuestion();
+    if (gameMode === 'listen' && btnListenPlay) {
+      if (document.activeElement && document.activeElement !== btnListenPlay) document.activeElement.blur();
+      setTimeout(function () { btnListenPlay.focus(); }, 0);
+    }
   });
 
   if (modeTraining) modeTraining.addEventListener('click', function () { setMode('training'); });

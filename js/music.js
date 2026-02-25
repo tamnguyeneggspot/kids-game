@@ -2,6 +2,7 @@
  * Nhạc nền dùng chung cho mọi trang WebGame.
  * - Tự tạo thẻ <audio> nếu chưa có (mọi trang chỉ cần load script).
  * - Lưu trạng thái bật/tắt vào localStorage (key: webgame-bgmusic).
+ * - Trên Safari iOS (Private mode / Block cookies) localStorage có thể throw → dùng fallback in-memory.
  * - API: window.WebGameMusic (toggle, isOn, setOn, play, pause, updateUI).
  */
 (function () {
@@ -14,27 +15,34 @@
   const AUDIO_ID = 'bgMusic';
   const AUDIO_SRC = 'audio/bg-music.mp3';
 
-  function getStored() {
+  /** Storage dùng được hay không (Safari Private / Block cookies → false). Fallback in-memory. */
+  var storage = (function () {
+    var fallback = {};
     try {
-      const v = localStorage.getItem(STORAGE_KEY);
-      if (v === '0' || v === 'false') return false;
-      if (v === '1' || v === 'true') return true;
-    } catch (e) {}
+      if (typeof window.localStorage === 'undefined') return { get: function (k) { return fallback[k] ?? null; }, set: function (k, v) { fallback[k] = v; } };
+      window.localStorage.setItem('_', '_');
+      window.localStorage.removeItem('_');
+      return { get: function (k) { return window.localStorage.getItem(k); }, set: function (k, v) { window.localStorage.setItem(k, v); } };
+    } catch (e) {
+      return { get: function (k) { return fallback[k] ?? null; }, set: function (k, v) { fallback[k] = v; } };
+    }
+  })();
+
+  function getStored() {
+    const v = storage.get(STORAGE_KEY);
+    if (v === '0' || v === 'false') return false;
+    if (v === '1' || v === 'true') return true;
     return DEFAULT_ON;
   }
 
   function getStoredVolume() {
-    try {
-      const v = parseFloat(localStorage.getItem(STORAGE_KEY_VOLUME), 10);
-      if (!isNaN(v) && v >= 0 && v <= 1) return v;
-    } catch (e) {}
+    const v = parseFloat(storage.get(STORAGE_KEY_VOLUME), 10);
+    if (!isNaN(v) && v >= 0 && v <= 1) return v;
     return DEFAULT_VOLUME;
   }
 
   function setStored(on) {
-    try {
-      localStorage.setItem(STORAGE_KEY, on ? '1' : '0');
-    } catch (e) {}
+    storage.set(STORAGE_KEY, on ? '1' : '0');
   }
 
   /** Tạo hoặc lấy thẻ audio nhạc nền (dùng chung cho all page). */
@@ -75,9 +83,7 @@
 
   function setVolume(value) {
     const v = Math.max(0, Math.min(1, value));
-    try {
-      localStorage.setItem(STORAGE_KEY_VOLUME, String(v));
-    } catch (e) {}
+    storage.set(STORAGE_KEY_VOLUME, String(v));
     if (audio) audio.volume = v;
   }
 

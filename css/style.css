@@ -282,7 +282,7 @@ body {
   border: 3px solid #81c784;
   border-radius: 16px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
 }
 .btn-listen-play:hover {
   transform: scale(1.05);
@@ -290,6 +290,19 @@ body {
   background: #2e7d32;
   color: #fff;
   border-color: #2e7d32;
+}
+.btn-listen-play:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.5), 0 4px 16px rgba(46, 125, 50, 0.35);
+  background: #2e7d32;
+  color: #fff;
+  border-color: #1b5e20;
+}
+.btn-listen-play:focus:not(:hover) {
+  transform: scale(1.02);
+}
+.btn-listen-play:hover:focus {
+  transform: scale(1.05);
 }
 .btn-listen-play:focus-visible { outline: 3px solid #1b5e20; outline-offset: 3px; }
 
@@ -384,6 +397,25 @@ body {
   margin: 0;
   background: transparent;
   border: none;
+}
+/* Mode Nghe (tab Nghe): số to, rõ, dễ nhìn */
+.page-counting.mode-listen .choice-btn {
+  font-size: clamp(2.5rem, 14vw, 5rem);
+  font-weight: 800;
+  min-width: clamp(72px, 22vw, 120px);
+  min-height: clamp(72px, 22vw, 120px);
+  padding: 0.5rem 0.75rem;
+  color: #6b4ce6;
+  border-width: 4px;
+  border-color: #6b4ce6;
+}
+.page-counting.mode-listen .choice-btn:hover {
+  background: #6b4ce6;
+  color: #fff;
+}
+.page-counting.mode-listen .choices {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .objects-wrap {

@@ -14,7 +14,7 @@
   const STORAGE_KEY_VOICE = 'webgame-voice';
   const STORAGE_KEY_MUSIC_VOLUME = 'webgame-music-volume';
   const STORAGE_KEY_VOICE_VOLUME = 'webgame-voice-volume';
-  const DEFAULT_MUSIC_VOLUME = 0.2;
+  const DEFAULT_MUSIC_VOLUME = 0.1;
   const DEFAULT_VOICE_VOLUME = 1;
 
   /** Giọng ưu tiên: nữ, tiếng Việt (cute cho bé). */

@@ -10,7 +10,7 @@
   const STORAGE_KEY = 'webgame-bgmusic';
   const STORAGE_KEY_VOLUME = 'webgame-music-volume';
   const DEFAULT_ON = true;
-  const DEFAULT_VOLUME = 0.5;
+  const DEFAULT_VOLUME = 0.1;
   const AUDIO_ID = 'bgMusic';
   const AUDIO_SRC = 'audio/bg-music.mp3';
 

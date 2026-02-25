@@ -29,6 +29,7 @@
     <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
       <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
       <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab" id="modeMatch" role="tab" aria-selected="false" aria-controls="panel-match"><span class="mode-tab-icon" aria-hidden="true">🖼️</span> Ghép chữ</button>
     </div>
     <p class="score" id="score">Điểm: 0</p>
   </header>
@@ -64,6 +65,10 @@
   <script src="js/settings.js"></script>
   <script src="js/sfx.js"></script>
   <script src="js/diem.js"></script>
-  <script src="js/alphabet.js"></script>
+  <script src="js/alphabet/shared.js"></script>
+  <script src="js/alphabet/training.js"></script>
+  <script src="js/alphabet/listen.js"></script>
+  <script src="js/alphabet/match.js"></script>
+  <script src="js/alphabet/main.js"></script>
 </body>
 </html>

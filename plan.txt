@@ -43,4 +43,31 @@
 2. Làm **1 game đơn giản** trước (ví dụ: Đếm đồ vật – hiện N hình, chọn số).
 3. Sau đó thêm game chữ cái (ví dụ: Ghép chữ với hình).
 
-Bạn muốn bắt đầu từ game nào: **Số đếm** hay **Bảng chữ cái**?
+*(Đã xong: trang chủ, Số đếm Nhìn/Nghe/Test, Bảng chữ cái Nhìn/Nghe, Màu sắc Nhìn/Nghe.)*
+
+## 5. Bước làm tiếp theo (ưu tiên)
+
+### 5.1. Ghép chữ với hình (Bảng chữ cái)
+- Hiện một chữ cái (hoặc hình), bé chọn hình (hoặc chữ) tương ứng: A = Apple, B = Ball...
+- Có thể thêm tab/mode mới trong alphabet.html hoặc trang riêng.
+- Dùng emoji hoặc ảnh trong img/ (nếu có) cho hình minh họa.
+
+### 5.2. So sánh nhiều/ít (Số đếm)
+- Hiện 2 nhóm đồ vật (trái vs phải), câu hỏi: "Bên nào nhiều hơn?" hoặc "Bên nào ít hơn?".
+- Bé chọn bên trái hoặc bên phải.
+- Logic: so sánh 2 số, không cần thêm asset phức tạp.
+
+### 5.3. Điền số còn thiếu (Số đếm)
+- Hiện dãy số có ô trống: ví dụ 1, 2, _, 4.
+- Bé chọn số đúng (3) trong 3–4 đáp án.
+- Tăng độ khó nhẹ so với đếm đồ vật.
+
+### 5.4. Chế độ Test cho Màu sắc
+- Giống Số đếm: thêm tab "Test" trong color.html.
+- Câu hỏi: "Màu này gọi là gì?" → 4 đáp án (tên màu), bé chọn.
+- Tái dùng pattern từ counting.js (chế độ Test).
+
+### 5.5. (Tùy chọn) Các ý tưởng khác từ mục 1
+- **Sắp xếp A–Z**: kéo thả chữ vào đúng thứ tự (Alphabet).
+- **Nối số với số lượng**: nối số 3 với nhóm có 3 con vật (Counting).
+- **Tô màu chữ**: tô theo nét (Alphabet) — cần canvas/ SVG, phức tạp hơn.

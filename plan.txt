@@ -1,0 +1,46 @@
+# Kế hoạch Web Game cho trẻ em
+
+## 1. Ý tưởng game phù hợp
+
+### Bảng chữ cái (Alphabet)
+- **Ghép chữ với hình**: chọn hình tương ứng với chữ cái (A = Apple, B = Ball...).
+- **Nghe và chọn**: phát âm chữ cái, trẻ chọn đúng ô chữ.
+- **Sắp xếp A–Z**: kéo thả các chữ vào đúng thứ tự.
+- **Tô màu chữ**: tô theo nét, nhận diện chữ in hoa / thường.
+
+### Số đếm (Counting)
+- **Đếm đồ vật**: đếm số lượng hình (sao, quả, bóng) rồi chọn số.
+- **Nối số với số lượng**: nối số 3 với nhóm có 3 con vật.
+- **Điền số còn thiếu**: 1, 2, _, 4 → điền 3.
+- **So sánh nhiều/ít**: chọn bên có nhiều hơn hoặc ít hơn.
+
+### Kết hợp (Alphabet + Numbers)
+- **Trang chủ mini**: nhiều game nhỏ (chữ cái, số đếm, màu sắc) chọn bằng icon.
+
+## 2. Công nghệ gợi ý
+
+- **Frontend**: HTML + CSS + JavaScript thuần (dễ deploy, chạy offline).
+- **Âm thanh**: Web Speech API (đọc chữ/số) hoặc file audio có sẵn.
+- **Giao diện**: lớn, rõ, nhiều màu; nút bấm to; có âm báo khi đúng/sai.
+
+## 3. Cấu trúc thư mục đề xuất
+
+  WebGame/
+  ├── index.html          # Trang chủ chọn game
+  ├── css/
+  │   └── style.css
+  ├── js/
+  │   ├── app.js          # Logic chung
+  │   ├── alphabet.js     # Game bảng chữ cái
+  │   └── counting.js     # Game số đếm
+  └── assets/
+      ├── images/         # Hình minh họa (A=apple, 1=one ball...)
+      └── sounds/         # Âm thanh (đúng/sai, đọc chữ/số)
+
+## 4. Bước làm đầu tiên
+
+1. Làm **trang chủ** với 2 nút: "Bảng chữ cái" và "Số đếm".
+2. Làm **1 game đơn giản** trước (ví dụ: Đếm đồ vật – hiện N hình, chọn số).
+3. Sau đó thêm game chữ cái (ví dụ: Ghép chữ với hình).
+
+Bạn muốn bắt đầu từ game nào: **Số đếm** hay **Bảng chữ cái**?

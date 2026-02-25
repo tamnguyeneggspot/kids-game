@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng chữ cái - Game cho bé</title>
+  <meta name="description" content="Game bảng chữ cái cho bé - Học chữ, nghe phát âm, ghép chữ với hình. Học chữ vui.">
+  <meta name="keywords" content="bảng chữ cái, học chữ, game chữ cái, game cho bé, học đọc">
+  <link rel="canonical" href="https://example.com/alphabet.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/alphabet.html">
+  <meta property="og:title" content="Bảng chữ cái - Game cho bé">
+  <meta property="og:description" content="Game bảng chữ cái cho bé - Học chữ, nghe phát âm, ghép chữ với hình. Học chữ vui.">
+  <meta property="og:image" content="https://example.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bảng chữ cái - Game cho bé">
+  <meta name="twitter:description" content="Game bảng chữ cái cho bé - Học chữ, nghe phát âm, ghép chữ với hình. Học chữ vui.">
+  <meta name="twitter:image" content="https://example.com/img/og.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-alphabet">
+  <header class="header">
+    <h1>🔤 Bảng chữ cái</h1>
+    <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
+      <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
+      <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+    </div>
+    <p class="score" id="score">Điểm: 0</p>
+  </header>
+
+  <main class="game-area">
+    <section class="question" aria-live="polite">
+      <p class="question-text" id="questionText">Chữ này đọc là gì?</p>
+      <p class="reading-text" id="readingText" hidden></p>
+      <div class="letter-display-wrap" id="letterDisplayWrap" role="img" aria-label="Chữ cái"></div>
+    </section>
+
+    <section class="choices" id="choices" role="group" aria-label="Chọn đáp án"></section>
+
+    <div class="feedback" id="feedback" aria-live="assertive" hidden></div>
+
+    <div class="actions">
+      <button type="button" class="btn btn-next" id="btnNext" hidden>Tiếp theo →</button>
+      <div class="training-actions" id="trainingActions" hidden>
+        <button type="button" class="btn btn-listen" id="btnListen">🔊 Nghe</button>
+        <button type="button" class="btn btn-next-training" id="btnNextTraining">Chữ tiếp theo →</button>
+      </div>
+      <div class="play-listen-wrap" id="playListenWrap" hidden>
+        <button type="button" class="btn btn-listen-play" id="btnListenPlay">🔊 Nghe câu hỏi</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/alphabet.js"></script>
+</body>
+</html>

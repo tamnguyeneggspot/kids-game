@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Số đếm - Game cho bé</title>
+  <meta name="description" content="Game số đếm cho bé - Đếm đồ vật, nghe số, chọn số đúng. Học số vui nhộn.">
+  <meta name="keywords" content="game số đếm, đếm số, học số, game cho bé, số đếm">
+  <link rel="canonical" href="https://example.com/counting.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/counting.html">
+  <meta property="og:title" content="Số đếm - Game cho bé">
+  <meta property="og:description" content="Game số đếm cho bé - Đếm đồ vật, nghe số, chọn số đúng. Học số vui nhộn.">
+  <meta property="og:image" content="https://example.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Số đếm - Game cho bé">
+  <meta name="twitter:description" content="Game số đếm cho bé - Đếm đồ vật, nghe số, chọn số đúng. Học số vui nhộn.">
+  <meta name="twitter:image" content="https://example.com/img/og.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-counting">
+  <header class="header">
+    <h1>🔢 Số đếm</h1>
+    <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
+      <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
+      <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab" id="modePlay" role="tab" aria-selected="false" aria-controls="panel-play"><span class="mode-tab-icon" aria-hidden="true">🎮</span> Test</button>      
+    </div>
+    <p class="score" id="score">Điểm: 0</p>
+  </header>
+
+  <main class="game-area">
+    <section class="question" aria-live="polite">
+      <p class="question-text" id="questionText">Có bao nhiêu?</p>
+      <p class="reading-text" id="readingText" hidden></p>
+      <div class="objects-wrap" id="objectsWrap" role="img" aria-label="Các đồ vật cần đếm"></div>
+    </section>
+
+    <section class="choices" id="choices" role="group" aria-label="Chọn số"></section>
+
+    <div class="feedback" id="feedback" aria-live="assertive" hidden></div>
+
+    <div class="actions">
+      <button type="button" class="btn btn-next" id="btnNext" hidden>Tiếp theo →</button>
+      <div class="training-actions" id="trainingActions" hidden>
+        <button type="button" class="btn btn-listen" id="btnListen">🔊 Nghe</button>
+        <button type="button" class="btn btn-next-training" id="btnNextTraining">Số tiếp theo →</button>
+      </div>
+      <div class="play-listen-wrap" id="playListenWrap" hidden>
+        <button type="button" class="btn btn-listen-play" id="btnListenPlay">🔊 Nghe số</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/counting.js"></script>
+</body>
+</html>

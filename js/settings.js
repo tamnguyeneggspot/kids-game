@@ -150,6 +150,7 @@
    * TTS dùng chung cho mọi trang (all pages).
    * Dùng volume giọng đọc từ Settings (slider "Volume giọng đọc" / webgame-voice-volume).
    * Cách gọi: window.webGameSpeak('Đúng rồi!') hoặc window.WebGameVoice.speak('Đúng rồi!', 'vi-VN').
+   * Lưu ý: Safari iOS có thể bỏ qua utterance.volume (API TTS không cho route qua Web Audio).
    */
   function speak(text, lang) {
     if (!window.speechSynthesis) return;

@@ -60,6 +60,28 @@
     return el;
   }
 
+  /** Web Audio API: dùng GainNode để điều khiển volume (Safari iOS bỏ qua audio.volume). */
+  var audioCtx = null;
+  var gainNode = null;
+
+  function ensureWebAudioChain() {
+    if (gainNode) return gainNode;
+    var el = getOrCreateAudio();
+    var Ctor = window.AudioContext || window.webkitAudioContext;
+    if (!Ctor || !el) return null;
+    try {
+      audioCtx = audioCtx || new Ctor();
+      var source = audioCtx.createMediaElementSource(el);
+      gainNode = audioCtx.createGain();
+      source.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      gainNode.gain.value = getStoredVolume();
+      return gainNode;
+    } catch (e) {
+      return null;
+    }
+  }
+
   const audio = getOrCreateAudio();
   const btn = document.getElementById('btnMusicToggle');
   let userStarted = false;
@@ -77,14 +99,23 @@
 
   function playMusic() {
     if (!audio || !isOn()) return;
-    audio.volume = getStoredVolume();
+    var vol = getStoredVolume();
+    var g = ensureWebAudioChain();
+    if (g) {
+      g.gain.value = vol;
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume().catch(function () {});
+    } else if (audio) {
+      audio.volume = vol;
+    }
     audio.play().catch(function () {});
   }
 
   function setVolume(value) {
     const v = Math.max(0, Math.min(1, value));
     storage.set(STORAGE_KEY_VOLUME, String(v));
-    if (audio) audio.volume = v;
+    var g = ensureWebAudioChain();
+    if (g) g.gain.value = v;
+    else if (audio) audio.volume = v;
   }
 
   function pauseMusic() {

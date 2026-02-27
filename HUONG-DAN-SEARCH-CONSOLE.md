@@ -90,6 +90,15 @@ Sau khi gửi sitemap, yêu cầu Google index từng trang quan trọng:
 - **Kiên nhẫn:** SEO là quá trình dài hạn, không thể tăng rank ngay lập tức
 - **Cập nhật thường xuyên:** Kiểm tra Search Console mỗi 1-2 tuần để theo dõi tiến độ
 
+## Khi thêm trang mới
+
+**Không nhất thiết phải request indexing thủ công!**
+
+- **Cách tự động (Khuyến nghị):** Chỉ cần cập nhật `sitemap.xml` thêm URL mới → Google tự động crawl (1-2 tuần)
+- **Cách thủ công (Nhanh hơn):** Cập nhật sitemap + Request indexing trong Search Console → Google index nhanh hơn (vài giờ đến vài ngày)
+
+**Xem chi tiết:** File `HUONG-DAN-THEM-TRANG-MOI.md`
+
 ## Troubleshooting
 
 ### Nếu không xác minh được:

@@ -67,14 +67,14 @@
 
 | # | Việc cần làm | Trạng thái | Ghi chú |
 |---|--------------|------------|--------|
-| 4.1 | **Google Search Console** | ☐ | |
-| | – Thêm property https://kid.aiti9.com/ | ☐ | search.google.com/search-console |
-| | – Xác minh (DNS hoặc file HTML) | ☐ | |
-| | – Gửi Sitemap URL | ☐ | |
-| | – Dùng "Kiểm tra URL" cho trang chủ + 3 trang game | ☐ | Yêu cầu lập chỉ mục |
-| 4.2 | **Theo dõi** | ☐ | |
-| | – Xem "Hiệu suất" (truy vấn, vị trí, CTR) mỗi 1–2 tuần | ☐ | |
-| | – Sửa title/description theo truy vấn thực tế người dùng tìm | ☐ | |
+| 4.1 | **Google Search Console** | 📋 | Xem file HUONG-DAN-SEARCH-CONSOLE.md |
+| | – Thêm property https://kid.aiti9.com/ | 📋 | search.google.com/search-console - Cần thực hiện thủ công |
+| | – Xác minh (DNS hoặc file HTML) | 📋 | Chọn 1 trong 3 cách: file HTML, DNS, hoặc thẻ meta |
+| | – Gửi Sitemap URL | 📋 | Gửi: https://kid.aiti9.com/sitemap.xml |
+| | – Dùng "Kiểm tra URL" cho trang chủ + 3 trang game | 📋 | Yêu cầu lập chỉ mục cho 4 trang |
+| 4.2 | **Theo dõi** | 📋 | Bắt đầu sau 1-2 tuần |
+| | – Xem "Hiệu suất" (truy vấn, vị trí, CTR) mỗi 1–2 tuần | 📋 | Kiểm tra Performance trong Search Console |
+| | – Sửa title/description theo truy vấn thực tế người dùng tìm | 📋 | Tối ưu dựa trên dữ liệu từ khóa thực tế |
 
 ---
 

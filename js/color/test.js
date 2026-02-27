@@ -5,7 +5,7 @@
   if (!S) return;
 
   var COLORS = S.COLORS;
-  var CHOICES_COUNT = S.CHOICES_COUNT;
+  var TEST_CHOICES_COUNT = 2;
   var questionText = S.questionText;
   var readingText = S.readingText;
   var colorDisplayWrap = S.colorDisplayWrap;
@@ -13,7 +13,6 @@
   var feedbackEl = S.feedbackEl;
   var btnNext = S.btnNext;
   var scoreEl = S.scoreEl;
-  var speak = S.speak;
   var getWrongColors = S.getWrongColors;
   var shuffle = S.shuffle;
   var randomInt = S.randomInt;
@@ -21,6 +20,7 @@
   var addScore = S.addScore;
   var setScore = S.setScore;
   var getScore = S.getScore;
+  var speak = S.speak;
   var showCelebration = S.showCelebration;
   var showWrongEffect = S.showWrongEffect;
   var removeCelebration = S.removeCelebration;
@@ -29,21 +29,15 @@
   var correctColor = COLORS[0];
   var answered = false;
   var autoNextTimer = null;
-  var LISTEN_REPLAY_MS = 1000 * 60;
-  var listenReplayInterval = null;
-  var listenAutoPlayTimer = null;
 
-  function stopAllReplay() {
-    if (listenReplayInterval) {
-      clearInterval(listenReplayInterval);
-      listenReplayInterval = null;
+  function cleanup() {
+    if (autoNextTimer) {
+      clearTimeout(autoNextTimer);
+      autoNextTimer = null;
     }
-    if (listenAutoPlayTimer) {
-      clearTimeout(listenAutoPlayTimer);
-      listenAutoPlayTimer = null;
-    }
+    removeCelebration();
+    removeWrongEffect();
   }
-  window.colorStopListenReplay = stopAllReplay;
 
   function showQuestion() {
     questionText.classList.remove('training-color');
@@ -52,23 +46,25 @@
     var colorIdx = randomInt(0, COLORS.length - 1);
     correctColor = COLORS[colorIdx];
 
-    questionText.textContent = 'Nghe và chọn màu đúng';
+    questionText.textContent = 'Màu này gọi là gì?';
+    speak('Màu này gọi là gì?', 'vi-VN');
     if (colorDisplayWrap) {
       colorDisplayWrap.innerHTML = '';
-      colorDisplayWrap.setAttribute('aria-label', 'Nghe tên màu rồi chọn đáp án.');
+      var swatchWrap = createSwatchEl(correctColor.hex, null);
+      colorDisplayWrap.appendChild(swatchWrap);
+      colorDisplayWrap.setAttribute('aria-label', 'Màu ' + correctColor.name);
     }
 
-    var wrongColors = getWrongColors(correctColor, CHOICES_COUNT - 1);
+    var wrongColors = getWrongColors(correctColor, TEST_CHOICES_COUNT - 1);
     var options = shuffle([correctColor].concat(wrongColors));
     choicesEl.innerHTML = '';
     options.forEach(function (color) {
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'choice-btn choice-btn-color';
-      var swatchWrap = createSwatchEl(color.hex, color.name);
-      btn.appendChild(swatchWrap);
+      btn.className = 'choice-btn';
+      btn.textContent = color.name;
       btn.setAttribute('aria-label', 'Màu ' + color.name);
-      btn.addEventListener('click', function () { onChoiceColor(color, btn); });
+      btn.addEventListener('click', function () { onChoice(color, btn); });
       choicesEl.appendChild(btn);
     });
 
@@ -80,35 +76,15 @@
       clearTimeout(autoNextTimer);
       autoNextTimer = null;
     }
-    stopAllReplay();
+    if (window.colorStopListenReplay) window.colorStopListenReplay();
     removeCelebration();
     removeWrongEffect();
-
-    function playListenQuestion() {
-      speak('Đâu là màu ' + correctColor.name + '?', 'vi-VN');
-    }
-    listenAutoPlayTimer = setTimeout(function () {
-      listenAutoPlayTimer = null;
-      playListenQuestion();
-      listenReplayInterval = setInterval(function () {
-        if (answered) {
-          if (listenReplayInterval) clearInterval(listenReplayInterval);
-          listenReplayInterval = null;
-          return;
-        }
-        playListenQuestion();
-      }, LISTEN_REPLAY_MS);
-    }, 500);
-    if (S.btnListenPlay) {
-      if (document.activeElement && document.activeElement !== S.btnListenPlay) document.activeElement.blur();
-      setTimeout(function () { S.btnListenPlay.focus(); }, 0);
-    }
   }
 
-  function onChoiceColor(color, btn) {
+  function onChoice(color, btn) {
     if (answered) return;
     answered = true;
-    stopAllReplay();
+
     var allBtns = choicesEl.querySelectorAll('.choice-btn');
     allBtns.forEach(function (b) { b.disabled = true; });
 
@@ -150,18 +126,12 @@
     btnNext.focus();
   }
 
-  if (S.modeListen) {
-    S.modeListen.addEventListener('click', function () {
-      if (window.colorSetMode) window.colorSetMode('listen');
-    });
-  }
-  if (S.btnListenPlay) {
-    S.btnListenPlay.addEventListener('click', function () {
-      if (window.colorGameMode !== 'listen') return;
-      speak('Đâu là màu ' + correctColor.name + '?', 'vi-VN');
+  if (S.modeTest) {
+    S.modeTest.addEventListener('click', function () {
+      if (window.colorSetMode) window.colorSetMode('test');
     });
   }
 
   if (!window.colorModes) window.colorModes = {};
-  window.colorModes.listen = { show: showQuestion, cleanup: stopAllReplay };
+  window.colorModes.test = { show: showQuestion, cleanup: cleanup };
 })();

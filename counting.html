@@ -27,9 +27,11 @@
   <header class="header">
     <h1>🔢 Số đếm</h1>
     <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
-      <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
-      <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
-      <button type="button" class="mode-tab" id="modePlay" role="tab" aria-selected="false" aria-controls="panel-play"><span class="mode-tab-icon" aria-hidden="true">🎮</span> Test</button>      
+      <button type="button" class="mode-tab active" id="modeListen" role="tab" aria-selected="true" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab" id="modeTraining" role="tab" aria-selected="false" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
+      <button type="button" class="mode-tab" id="modePlay" role="tab" aria-selected="false" aria-controls="panel-play"><span class="mode-tab-icon" aria-hidden="true">🎮</span> Test</button>
+      <button type="button" class="mode-tab" id="modeCompare" role="tab" aria-selected="false" aria-controls="panel-compare"><span class="mode-tab-icon" aria-hidden="true">⚖️</span> So sánh</button>
+      <button type="button" class="mode-tab" id="modeFill" role="tab" aria-selected="false" aria-controls="panel-fill"><span class="mode-tab-icon" aria-hidden="true">✏️</span> Điền số</button>
     </div>
     <p class="score" id="score">Điểm: 0</p>
   </header>
@@ -63,12 +65,15 @@
 
   <script src="js/music.js"></script>
   <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
   <script src="js/sfx.js"></script>
   <script src="js/diem.js"></script>
   <script src="js/counting/shared.js"></script>
   <script src="js/counting/training.js"></script>
   <script src="js/counting/listen.js"></script>
   <script src="js/counting/play.js"></script>
+  <script src="js/counting/compare.js"></script>
+  <script src="js/counting/fill.js"></script>
   <script src="js/counting/main.js"></script>
 </body>
 </html>

@@ -132,6 +132,8 @@
     modeTraining: document.getElementById('modeTraining'),
     modePlay: document.getElementById('modePlay'),
     modeListen: document.getElementById('modeListen'),
+    modeCompare: document.getElementById('modeCompare'),
+    modeFill: document.getElementById('modeFill'),
     playListenWrap: document.getElementById('playListenWrap'),
     btnListenPlay: document.getElementById('btnListenPlay'),
     randomInt: randomInt,

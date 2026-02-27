@@ -14,8 +14,9 @@
   var playListenWrap = S.playListenWrap;
   var modeTraining = S.modeTraining;
   var modeListen = S.modeListen;
+  var modeTest = S.modeTest;
 
-  window.colorGameMode = 'training';
+  window.colorGameMode = 'listen';
 
   function setMode(mode) {
     if (modes[window.colorGameMode] && modes[window.colorGameMode].cleanup) {
@@ -25,6 +26,7 @@
 
     var isTraining = mode === 'training';
     var isListen = mode === 'listen';
+    var isTest = mode === 'test';
 
     if (modeTraining) {
       modeTraining.classList.toggle('active', mode === 'training');
@@ -33,6 +35,10 @@
     if (modeListen) {
       modeListen.classList.toggle('active', mode === 'listen');
       modeListen.setAttribute('aria-selected', mode === 'listen' ? 'true' : 'false');
+    }
+    if (modeTest) {
+      modeTest.classList.toggle('active', mode === 'test');
+      modeTest.setAttribute('aria-selected', mode === 'test' ? 'true' : 'false');
     }
 
     if (scoreEl) scoreEl.style.display = isTraining ? 'none' : '';
@@ -51,13 +57,37 @@
     }
 
     document.body.classList.toggle('mode-listen', isListen);
+    document.body.classList.toggle('mode-test', isTest);
 
     if (modes[mode] && modes[mode].show) {
       modes[mode].show();
     }
   }
 
-  window.colorSetMode = setMode;
+  var COLOR_MODE_KEY = 'colorMode';
+  var VALID_MODES = ['training', 'listen', 'test'];
+
+  function saveMode(mode) {
+    try {
+      localStorage.setItem(COLOR_MODE_KEY, mode);
+    } catch (e) {}
+  }
+
+  function getSavedMode() {
+    try {
+      var saved = localStorage.getItem(COLOR_MODE_KEY);
+      return saved && VALID_MODES.indexOf(saved) !== -1 ? saved : 'listen';
+    } catch (e) {
+      return 'listen';
+    }
+  }
+
+  function setModeAndSave(mode) {
+    setMode(mode);
+    saveMode(mode);
+  }
+
+  window.colorSetMode = setModeAndSave;
 
   btnNext.addEventListener('click', function () {
     var mode = window.colorGameMode;
@@ -70,5 +100,5 @@
     }
   });
 
-  setMode('training');
+  setMode(getSavedMode());
 })();

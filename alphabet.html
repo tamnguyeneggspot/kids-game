@@ -27,9 +27,10 @@
   <header class="header">
     <h1>🔤 Bảng chữ cái</h1>
     <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
-      <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
-      <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab active" id="modeListen" role="tab" aria-selected="true" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab" id="modeTraining" role="tab" aria-selected="false" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>      
       <button type="button" class="mode-tab" id="modeMatch" role="tab" aria-selected="false" aria-controls="panel-match"><span class="mode-tab-icon" aria-hidden="true">🖼️</span> Ghép chữ</button>
+      <button type="button" class="mode-tab" id="modeSort" role="tab" aria-selected="false" aria-controls="panel-sort"><span class="mode-tab-icon" aria-hidden="true">🔤</span> Sắp xếp A–Z</button>
     </div>
     <p class="score" id="score">Điểm: 0</p>
   </header>
@@ -45,6 +46,13 @@
 
     <div class="feedback" id="feedback" aria-live="assertive" hidden></div>
 
+    <div class="sort-panel" id="sortPanel" hidden aria-label="Sắp xếp chữ A–Z">
+      <p class="sort-instruction" id="sortInstruction">Kéo thả các chữ vào đúng thứ tự A → Z</p>
+      <div class="sort-slots" id="sortSlots" role="group" aria-label="Ô đặt chữ"></div>
+      <div class="sort-letters-pool" id="sortLettersPool" role="group" aria-label="Chữ để kéo thả"></div>
+      <div class="feedback sort-feedback" id="sortFeedback" aria-live="assertive" hidden></div>
+      <button type="button" class="btn btn-next" id="sortBtnNext" hidden aria-label="Câu tiếp theo">➡️ Câu tiếp theo</button>
+    </div>
     <div class="actions">
       <button type="button" class="btn btn-next" id="btnNext" hidden aria-label="Tiếp theo"><span class="btn-next-icon" aria-hidden="true">➡️</span></button>
       <div class="training-actions" id="trainingActions" hidden>
@@ -63,12 +71,14 @@
 
   <script src="js/music.js"></script>
   <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
   <script src="js/sfx.js"></script>
   <script src="js/diem.js"></script>
   <script src="js/alphabet/shared.js"></script>
   <script src="js/alphabet/training.js"></script>
   <script src="js/alphabet/listen.js"></script>
   <script src="js/alphabet/match.js"></script>
+  <script src="js/alphabet/sort.js"></script>
   <script src="js/alphabet/main.js"></script>
 </body>
 </html>

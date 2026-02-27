@@ -162,6 +162,7 @@
     modeTraining: document.getElementById('modeTraining'),
     modeListen: document.getElementById('modeListen'),
     modeMatch: document.getElementById('modeMatch'),
+    modeSort: document.getElementById('modeSort'),
     playListenWrap: document.getElementById('playListenWrap'),
     btnListenPlay: document.getElementById('btnListenPlay'),
     randomInt: randomInt,

@@ -150,6 +150,7 @@
     btnNextTraining: document.getElementById('btnNextTraining'),
     modeTraining: document.getElementById('modeTraining'),
     modeListen: document.getElementById('modeListen'),
+    modeTest: document.getElementById('modeTest'),
     playListenWrap: document.getElementById('playListenWrap'),
     btnListenPlay: document.getElementById('btnListenPlay'),
     randomInt: randomInt,

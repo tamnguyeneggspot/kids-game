@@ -15,8 +15,10 @@
   var modeTraining = S.modeTraining;
   var modePlay = S.modePlay;
   var modeListen = S.modeListen;
+  var modeCompare = S.modeCompare;
+  var modeFill = S.modeFill;
 
-  window.countingGameMode = 'training';
+  window.countingGameMode = 'listen';
 
   function setMode(mode) {
     if (modes[window.countingGameMode] && modes[window.countingGameMode].cleanup) {
@@ -27,6 +29,8 @@
     var isTraining = mode === 'training';
     var isListen = mode === 'listen';
     var isPlay = mode === 'play';
+    var isCompare = mode === 'compare';
+    var isFill = mode === 'fill';
 
     if (modeTraining) {
       modeTraining.classList.toggle('active', mode === 'training');
@@ -40,11 +44,21 @@
       modeListen.classList.toggle('active', mode === 'listen');
       modeListen.setAttribute('aria-selected', mode === 'listen' ? 'true' : 'false');
     }
+    if (modeCompare) {
+      modeCompare.classList.toggle('active', mode === 'compare');
+      modeCompare.setAttribute('aria-selected', mode === 'compare' ? 'true' : 'false');
+    }
+    if (modeFill) {
+      modeFill.classList.toggle('active', mode === 'fill');
+      modeFill.setAttribute('aria-selected', mode === 'fill' ? 'true' : 'false');
+    }
 
     document.body.classList.toggle('mode-listen', isListen);
+    document.body.classList.toggle('mode-compare', isCompare);
+    document.body.classList.toggle('mode-fill', isFill);
 
-    if (scoreEl) scoreEl.style.display = isTraining ? 'none' : '';
-    choicesEl.style.display = isTraining ? 'none' : '';
+    if (scoreEl) scoreEl.style.display = (isTraining ? 'none' : '');
+    choicesEl.style.display = (isTraining ? 'none' : '');
     feedbackEl.hidden = true;
     btnNext.hidden = true;
 
@@ -63,7 +77,30 @@
     }
   }
 
-  window.countingSetMode = setMode;
+  var COUNTING_MODE_KEY = 'countingMode';
+  var VALID_MODES = ['training', 'listen', 'play', 'compare', 'fill'];
+
+  function saveMode(mode) {
+    try {
+      localStorage.setItem(COUNTING_MODE_KEY, mode);
+    } catch (e) {}
+  }
+
+  function getSavedMode() {
+    try {
+      var saved = localStorage.getItem(COUNTING_MODE_KEY);
+      return saved && VALID_MODES.indexOf(saved) !== -1 ? saved : 'listen';
+    } catch (e) {
+      return 'listen';
+    }
+  }
+
+  function setModeAndSave(mode) {
+    setMode(mode);
+    saveMode(mode);
+  }
+
+  window.countingSetMode = setModeAndSave;
 
   btnNext.addEventListener('click', function () {
     var mode = window.countingGameMode;
@@ -76,5 +113,5 @@
     }
   });
 
-  setMode('training');
+  setMode(getSavedMode());
 })();

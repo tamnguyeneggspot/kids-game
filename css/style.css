@@ -452,6 +452,82 @@ body {
   line-height: 1;
   animation: pop 0.3s ease-out;
 }
+
+/* ---- So sánh nhiều/ít (Số đếm) ---- */
+.objects-wrap-compare {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+.compare-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+  flex: 1;
+  max-width: 45%;
+  padding: 0.75rem;
+  border-radius: 16px;
+  background: #f0ebfa;
+  border: 3px solid #c9b8f0;
+}
+.compare-group-left { border-color: #6b4ce6; background: #ede9fc; }
+.compare-group-right { border-color: #8b6cf6; background: #f3effc; }
+.compare-vs {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.page-counting.mode-compare .choices-compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.page-counting.mode-compare .choice-btn-side {
+  min-width: 140px;
+  min-height: 56px;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.25rem;
+}
+
+/* Điền số còn thiếu: dãy số */
+.objects-wrap-sequence {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  flex-direction: row;
+}
+.sequence-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #6b4ce6;
+  background: #fff;
+  border: 3px solid #c9b8f0;
+  border-radius: 14px;
+  padding: 0.25rem 0.5rem;
+}
+.sequence-cell.sequence-gap {
+  background: #f0ebfa;
+  border-color: #6b4ce6;
+  color: #6b4ce6;
+  font-size: 2rem;
+}
+
 @keyframes pop {
   from { transform: scale(0); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -544,6 +620,98 @@ body {
 }
 .page-alphabet.mode-match .choice-btn-match-label {
   font-size: 0.95rem;
+}
+
+/* ---- Sắp xếp A–Z (Alphabet) ---- */
+.sort-panel {
+  padding: 0.5rem 0 1rem 0;
+}
+.sort-instruction {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem 0;
+  color: #333;
+}
+.sort-slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+.sort-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(56px, 16vw, 72px);
+  min-height: clamp(56px, 16vw, 72px);
+  background: #f0f9ff;
+  border: 3px dashed #0ea5e9;
+  border-radius: 16px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.sort-slot.sort-slot-over {
+  background: #e0f2fe;
+  border-color: #0284c7;
+}
+.sort-slot.sort-slot-correct {
+  background: #dcfce7;
+  border: 3px solid #22c55e;
+  border-style: solid;
+}
+.sort-letter {
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-weight: 800;
+  color: #0ea5e9;
+  padding: 0.35rem 0.5rem;
+  cursor: grab;
+  user-select: none;
+  border-radius: 12px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.sort-letter:active {
+  cursor: grabbing;
+}
+.sort-letter.sort-letter-pool {
+  background: #fff;
+  border: 3px solid #0ea5e9;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
+}
+.sort-letter.sort-letter-pool:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+}
+.sort-letter.sort-dragging {
+  opacity: 0.6;
+}
+.sort-slot .sort-letter {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: grab;
+}
+.sort-letters-pool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f8fcff;
+  border-radius: 16px;
+  border: 2px solid #e0f2fe;
+  min-height: 72px;
+}
+.sort-feedback {
+  margin-bottom: 0.75rem;
+}
+.page-alphabet.mode-sort .question,
+.page-alphabet.mode-sort .choices,
+.page-alphabet.mode-sort .actions {
+  display: none !important;
+}
+.page-alphabet.mode-sort .sort-panel #sortBtnNext {
+  margin-top: 0.5rem;
 }
 
 @keyframes correct {

@@ -24,11 +24,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-color">
+  <div class="webgame-settings" id="webgameSettingsWrap" aria-label="Cài đặt">
+    <button type="button" class="webgame-settings-btn" id="webgameSettingsBtn" aria-label="Mở cài đặt" aria-expanded="false" aria-haspopup="true">⚙️</button>
+    <div class="webgame-settings-panel" id="webgameSettingsPanel" hidden>
+      <div class="webgame-settings-panel-header">Cài đặt</div>
+      <div class="webgame-settings-panel-body">
+        <div class="webgame-settings-row">
+          <span class="webgame-settings-label">🎵 Nhạc nền</span>
+          <button type="button" class="webgame-settings-toggle webgame-settings-toggle-on" id="settingsMusicToggle" aria-pressed="true">
+            <span class="webgame-settings-toggle-inner"></span>
+          </button>
+        </div>
+        <div class="webgame-settings-row">
+          <span class="webgame-settings-label">🔊 Âm hiệu ứng</span>
+          <button type="button" class="webgame-settings-toggle webgame-settings-toggle-on" id="settingsSfxToggle" aria-pressed="true">
+            <span class="webgame-settings-toggle-inner"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="header">
     <h1>🎨 Màu sắc</h1>
     <div class="mode-tabs" role="tablist" aria-label="Chế độ chơi">
-      <button type="button" class="mode-tab active" id="modeTraining" role="tab" aria-selected="true" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>
-      <button type="button" class="mode-tab" id="modeListen" role="tab" aria-selected="false" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab active" id="modeListen" role="tab" aria-selected="true" aria-controls="panel-listen"><span class="mode-tab-icon" aria-hidden="true">🔊</span> Nghe</button>
+      <button type="button" class="mode-tab" id="modeTraining" role="tab" aria-selected="false" aria-controls="panel-training"><span class="mode-tab-icon" aria-hidden="true">📚</span> Nhìn</button>      
+      <button type="button" class="mode-tab" id="modeTest" role="tab" aria-selected="false" aria-controls="panel-test"><span class="mode-tab-icon" aria-hidden="true">🎮</span> Test</button>
     </div>
     <p class="score" id="score">Điểm: 0</p>
   </header>
@@ -62,11 +83,13 @@
 
   <script src="js/music.js"></script>
   <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
   <script src="js/sfx.js"></script>
   <script src="js/diem.js"></script>
   <script src="js/color/shared.js"></script>
   <script src="js/color/training.js"></script>
   <script src="js/color/listen.js"></script>
+  <script src="js/color/test.js"></script>
   <script src="js/color/main.js"></script>
 </body>
 </html>

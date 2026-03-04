@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game tìm cái giống / khác cho bé - Same & Different miễn phí</title>
+  <meta name="description" content="Game tìm cái giống hoặc cái khác: bé tìm thẻ giống với mẫu hoặc thẻ khác với các thẻ còn lại. Chủ đề chữ cái, số, màu. Trò chơi giáo dục rèn phân loại và so sánh, miễn phí cho trẻ mầm non.">
+  <meta name="keywords" content="game tìm cái giống, game tìm cái khác, same different cho bé, game giáo dục, phân loại, so sánh, học chữ, học số, màu sắc">
+  <link rel="canonical" href="https://kid.aiti9.com/same-different.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/same-different.html">
+  <meta property="og:title" content="Game tìm cái giống / khác cho bé - Same & Different miễn phí">
+  <meta property="og:description" content="Bé tìm thẻ giống mẫu hoặc thẻ khác với các thẻ còn lại. Chủ đề chữ, số, màu. Game giáo dục rèn phân loại, chơi miễn phí.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game tìm cái giống / khác cho bé - Same & Different miễn phí">
+  <meta name="twitter:description" content="Bé tìm thẻ giống mẫu hoặc thẻ khác với các thẻ còn lại. Game giáo dục rèn phân loại, chơi miễn phí.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-same-diff">
+  <header class="header">
+    <h1>Tìm cái giống / khác</h1>
+    <p class="page-intro">Con tìm thẻ giống với mẫu (hoặc thẻ khác với các thẻ còn lại) nhé!</p>
+
+    <div class="same-diff-topbar" role="group" aria-label="Chọn chế độ và chủ đề">
+      <div class="same-diff-mode" aria-label="Chế độ">
+        <span class="same-diff-mode-label">Chế độ:</span>
+        <button type="button" class="same-diff-mode-btn active" data-mode="same" aria-pressed="true">Tìm cái giống</button>
+        <button type="button" class="same-diff-mode-btn" data-mode="different" aria-pressed="false">Tìm cái khác</button>
+      </div>
+      <div class="same-diff-topic" aria-label="Chủ đề">
+        <span class="same-diff-topic-label">Chủ đề:</span>
+        <button type="button" class="same-diff-topic-btn active" data-topic="alphabet" aria-pressed="true">Chữ</button>
+        <button type="button" class="same-diff-topic-btn" data-topic="counting" aria-pressed="false">Số</button>
+        <button type="button" class="same-diff-topic-btn" data-topic="color" aria-pressed="false">Màu</button>
+      </div>
+      <div class="same-diff-rounds" aria-label="Chế độ chơi">
+        <span class="same-diff-rounds-label">Chơi:</span>
+        <button type="button" class="same-diff-rounds-btn active" data-rounds="continuous" aria-pressed="true">Liên tục</button>
+        <button type="button" class="same-diff-rounds-btn" data-rounds="5" aria-pressed="false">5 câu</button>
+        <button type="button" class="same-diff-rounds-btn" data-rounds="10" aria-pressed="false">10 câu</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="game-area same-diff-area">
+    <div class="same-diff-question" id="sameDiffQuestion" role="group" aria-live="polite">
+      <p class="same-diff-prompt" id="sameDiffPrompt">Tìm cái giống với đây:</p>
+      <div class="same-diff-sample-wrap" id="sameDiffSampleWrap">
+        <div class="same-diff-sample" id="sameDiffSample" aria-hidden="true">
+          <!-- Thẻ mẫu (chế độ giống) do JS render -->
+        </div>
+      </div>
+    </div>
+
+    <div class="same-diff-cards" id="sameDiffCards" role="group" aria-label="Lựa chọn">
+      <!-- 3–4 thẻ do JS render -->
+    </div>
+
+    <div class="same-diff-score-wrap" id="sameDiffScoreWrap" aria-live="polite" hidden>
+      <span class="same-diff-score" id="sameDiffScore">Đúng: 0 / 10</span>
+    </div>
+
+    <div class="same-diff-summary" id="sameDiffSummary" aria-live="polite" hidden>
+      <p class="same-diff-summary-text" id="sameDiffSummaryText"></p>
+      <button type="button" class="btn same-diff-btn-replay" id="sameDiffBtnReplay">Chơi lại</button>
+    </div>
+
+    <div class="same-diff-actions">
+      <button type="button" class="btn same-diff-btn-replay-secondary" id="sameDiffBtnReplaySecondary">Chơi lại</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/same-different/shared.js"></script>
+  <script src="js/same-different/game.js"></script>
+  <script src="js/same-different/main.js"></script>
+</body>
+</html>

@@ -111,14 +111,14 @@ KidsGame/
 
 ## 7. Các bước triển khai (checklist)
 
-- [ ] **Bước 1:** Tạo `plans/same-different-plan.md` (file này).
-- [ ] **Bước 2:** Tạo `same-different.html` (meta, chế độ, chủ đề, câu hỏi, thẻ, điểm, footer).
-- [ ] **Bước 3:** Thêm CSS .page-same-diff, .same-diff-sample, .same-diff-cards, .same-diff-card.
-- [ ] **Bước 4:** Viết `js/same-different/shared.js` (getSameQuestion, getDifferentQuestion).
-- [ ] **Bước 5:** Viết `js/same-different/game.js` (nextQuestion, onCardClick, resetGame).
-- [ ] **Bước 6:** Viết `js/same-different/main.js` (chọn chế độ/chủ đề, gắn event).
-- [ ] **Bước 7:** Thêm link game trên `index.html`; test Tìm giống / Tìm khác, từng chủ đề.
-- [ ] **Bước 8:** Test responsive, accessibility.
+- [x] **Bước 1:** Tạo `plans/same-different-plan.md` (file này).
+- [x] **Bước 2:** Tạo `same-different.html` (meta, chế độ, chủ đề, câu hỏi, thẻ, điểm, footer).
+- [x] **Bước 3:** Thêm CSS .page-same-diff, .same-diff-sample, .same-diff-cards, .same-diff-card.
+- [x] **Bước 4:** Viết `js/same-different/shared.js` (getSameQuestion, getDifferentQuestion).
+- [x] **Bước 5:** Viết `js/same-different/game.js` (nextQuestion, onCardClick, resetGame).
+- [x] **Bước 6:** Viết `js/same-different/main.js` (chọn chế độ/chủ đề, gắn event).
+- [x] **Bước 7:** Thêm link game trên `index.html`; test Tìm giống / Tìm khác, từng chủ đề.
+- [x] **Bước 8:** Test responsive, accessibility.
 
 ---
 

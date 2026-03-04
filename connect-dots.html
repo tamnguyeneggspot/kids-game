@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game nối chấm theo số cho bé - Connect the dots miễn phí</title>
+  <meta name="description" content="Game nối chấm theo số cho bé: click theo thứ tự 1, 2, 3... để nối thành hình ngôi sao, tam giác, ngôi nhà. Trò chơi giáo dục rèn thứ tự số, miễn phí cho trẻ mầm non.">
+  <meta name="keywords" content="game nối chấm theo số, connect the dots cho bé, học số, thứ tự số, game giáo dục, game miễn phí cho bé">
+  <link rel="canonical" href="https://kid.aiti9.com/connect-dots.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/connect-dots.html">
+  <meta property="og:title" content="Game nối chấm theo số cho bé - Connect the dots miễn phí">
+  <meta property="og:description" content="Click theo thứ tự 1 → 2 → 3... để nối chấm thành hình. Game giáo dục rèn thứ tự số, chơi miễn phí.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game nối chấm theo số cho bé - Connect the dots miễn phí">
+  <meta name="twitter:description" content="Click theo thứ tự 1 → 2 → 3... để nối chấm thành hình. Game giáo dục rèn thứ tự số, chơi miễn phí.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-connect-dots">
+  <header class="header">
+    <h1>Nối chấm theo số</h1>
+    <p class="page-intro">Chọn hình rồi <strong>click lần lượt</strong> theo thứ tự 1 → 2 → 3 → … để nối các chấm thành hình nhé!</p>
+
+    <div class="connect-dots-shape-row" role="group" aria-label="Chọn hình">
+      <label for="connectDotsShape" class="connect-dots-shape-label">Hình:</label>
+      <select id="connectDotsShape" class="connect-dots-shape-select" aria-label="Chọn hình để nối chấm">
+        <!-- Options do JS điền -->
+      </select>
+    </div>
+  </header>
+
+  <main class="game-area connect-dots-area">
+    <div class="connect-dots-status" id="connectDotsStatus" aria-live="polite">Click theo thứ tự 1 → 2 → 3 → … để nối thành hình.</div>
+
+    <div class="connect-dots-canvas-wrap">
+      <canvas id="connectDotsCanvas" width="400" height="400" aria-label="Khu vực nối chấm theo số"></canvas>
+    </div>
+
+    <p class="connect-dots-hint">Gợi ý: Click theo thứ tự 1 → 2 → 3 → …</p>
+
+    <div class="connect-dots-actions">
+      <button type="button" class="btn connect-dots-btn connect-dots-btn-replay" id="connectDotsBtnReplay">Chơi lại</button>
+      <button type="button" class="btn connect-dots-btn connect-dots-btn-other" id="connectDotsBtnOtherShape">Hình khác</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/connect-dots/shared.js"></script>
+  <script src="js/connect-dots/game.js"></script>
+  <script src="js/connect-dots/main.js"></script>
+</body>
+</html>

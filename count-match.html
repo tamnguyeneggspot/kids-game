@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game đếm và chọn số cho bé - Count & match miễn phí</title>
+  <meta name="description" content="Game đếm và chọn số: bé nhìn nhóm đồ vật (vd. 5 quả táo) rồi chọn số đúng trong 3–4 lựa chọn. Trò chơi giáo dục rèn kỹ năng đếm, miễn phí cho trẻ mầm non.">
+  <meta name="keywords" content="game đếm và chọn số, count and match cho bé, game giáo dục, học đếm, game miễn phí cho bé">
+  <link rel="canonical" href="https://kid.aiti9.com/count-match.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/count-match.html">
+  <meta property="og:title" content="Game đếm và chọn số cho bé - Count & match miễn phí">
+  <meta property="og:description" content="Bé nhìn nhóm đồ vật rồi chọn số đúng. Game giáo dục rèn đếm, chơi miễn phí.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game đếm và chọn số cho bé - Count & match miễn phí">
+  <meta name="twitter:description" content="Bé nhìn nhóm đồ vật rồi chọn số đúng. Game giáo dục rèn đếm, chơi miễn phí.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-count-match">
+  <header class="header">
+    <h1>Đếm và chọn số</h1>
+    <p class="page-intro">Con đếm xem có bao nhiêu đồ vật rồi chọn số đúng nhé!</p>
+
+    <div class="count-match-topbar" role="group" aria-label="Chế độ chơi">
+      <span class="count-match-mode-label">Chế độ:</span>
+      <button type="button" class="count-match-mode-btn active" data-mode="continuous" aria-pressed="true">Liên tục</button>
+      <button type="button" class="count-match-mode-btn" data-mode="5" aria-pressed="false">5 câu</button>
+      <button type="button" class="count-match-mode-btn" data-mode="10" aria-pressed="false">10 câu</button>
+    </div>
+  </header>
+
+  <main class="game-area count-match-area">
+    <div class="count-match-question" id="countMatchQuestion" role="group" aria-live="polite" aria-label="Có bao nhiêu đồ vật?">
+      <div class="count-match-objects" id="countMatchObjects">
+        <!-- N emoji/icon do JS render -->
+      </div>
+      <p class="count-match-prompt">Có bao nhiêu?</p>
+    </div>
+
+    <div class="count-match-choices" id="countMatchChoices" role="group" aria-label="Lựa chọn số">
+      <!-- 3–4 nút số do JS render -->
+    </div>
+
+    <div class="count-match-score-wrap" id="countMatchScoreWrap" aria-live="polite" hidden>
+      <span class="count-match-score" id="countMatchScore">Đúng: 0 / 10</span>
+    </div>
+
+    <div class="count-match-summary" id="countMatchSummary" aria-live="polite" hidden>
+      <p class="count-match-summary-text" id="countMatchSummaryText"></p>
+      <button type="button" class="btn count-match-btn-replay" id="countMatchBtnReplay">Chơi lại</button>
+    </div>
+
+    <div class="count-match-actions">
+      <button type="button" class="btn count-match-btn-replay-secondary" id="countMatchBtnReplaySecondary">Chơi lại</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/count-match/shared.js"></script>
+  <script src="js/count-match/game.js"></script>
+  <script src="js/count-match/main.js"></script>
+</body>
+</html>

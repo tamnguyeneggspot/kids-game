@@ -116,14 +116,14 @@ KidsGame/
 
 ## 8. Các bước triển khai (checklist)
 
-- [ ] **Bước 1:** Tạo `plans/connect-dots-plan.md` (file này).
-- [ ] **Bước 2:** Định nghĩa ít nhất 1 hình (points) trong shared.js.
-- [ ] **Bước 3:** Tạo `connect-dots.html` (meta, chọn hình, canvas/SVG, gợi ý, nút, footer).
-- [ ] **Bước 4:** Thêm CSS .page-connect-dots, .connect-dots-canvas-wrap.
-- [ ] **Bước 5:** Viết `js/connect-dots/shared.js` (CONNECT_DOTS_SHAPES, getShape).
-- [ ] **Bước 6:** Viết `js/connect-dots/game.js` (initShape, getPointAt, onPointClick, resetGame); vẽ chấm + đường (canvas hoặc SVG).
-- [ ] **Bước 7:** Viết `js/connect-dots/main.js` (chọn hình, gắn click, Chơi lại).
-- [ ] **Bước 8:** Thêm link game trên `index.html`; test nối đúng thứ tự, sai thứ tự, hoàn thành; responsive.
+- [x] **Bước 1:** Tạo `plans/connect-dots-plan.md` (file này).
+- [x] **Bước 2:** Định nghĩa ít nhất 1 hình (points) trong shared.js.
+- [x] **Bước 3:** Tạo `connect-dots.html` (meta, chọn hình, canvas/SVG, gợi ý, nút, footer).
+- [x] **Bước 4:** Thêm CSS .page-connect-dots, .connect-dots-canvas-wrap.
+- [x] **Bước 5:** Viết `js/connect-dots/shared.js` (CONNECT_DOTS_SHAPES, getShape).
+- [x] **Bước 6:** Viết `js/connect-dots/game.js` (initShape, getPointAt, onPointClick, resetGame); vẽ chấm + đường (canvas hoặc SVG).
+- [x] **Bước 7:** Viết `js/connect-dots/main.js` (chọn hình, gắn click, Chơi lại).
+- [x] **Bước 8:** Thêm link game trên `index.html`; test nối đúng thứ tự, sai thứ tự, hoàn thành; responsive.
 
 ---
 
@@ -136,4 +136,4 @@ KidsGame/
 
 ---
 
-*Plan lưu trong folder `plans`. Cập nhật lần cuối: theo ngày tạo file.*
+*Plan lưu trong folder `plans`. **Đã hoàn thành.** Cập nhật lần cuối: 2026-03-04.*

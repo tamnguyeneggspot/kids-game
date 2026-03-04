@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game sắp xếp theo thứ tự cho bé - Ordering số và chữ miễn phí</title>
+  <meta name="description" content="Game sắp xếp theo thứ tự cho bé: sắp số 1→10 hoặc chữ A→Z bằng cách click theo thứ tự. Trò chơi giáo dục rèn tư duy thứ tự, miễn phí cho trẻ mầm non.">
+  <meta name="keywords" content="game sắp xếp theo thứ tự, ordering cho bé, học số, học chữ, game giáo dục, game miễn phí cho bé">
+  <link rel="canonical" href="https://kid.aiti9.com/ordering.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/ordering.html">
+  <meta property="og:title" content="Game sắp xếp theo thứ tự cho bé - Ordering số và chữ miễn phí">
+  <meta property="og:description" content="Sắp số 1→10 hoặc chữ A→Z bằng cách click theo thứ tự. Game giáo dục rèn tư duy thứ tự, chơi miễn phí.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game sắp xếp theo thứ tự cho bé - Ordering số và chữ miễn phí">
+  <meta name="twitter:description" content="Sắp số 1→10 hoặc chữ A→Z bằng cách click theo thứ tự. Game giáo dục rèn tư duy thứ tự, chơi miễn phí.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-ordering">
+  <header class="header">
+    <h1>Sắp xếp theo thứ tự</h1>
+    <p class="page-intro">Chọn chủ đề rồi <strong>click lần lượt</strong> theo thứ tự từ bé đến lớn (1 → 2 → … hoặc A → B → …) nhé!</p>
+
+    <div class="ordering-topic" role="group" aria-label="Chọn chủ đề">
+      <span class="ordering-topic-label">Chủ đề:</span>
+      <button type="button" class="ordering-topic-btn active" data-topic="numbers" aria-pressed="true">Số 1→10</button>
+      <button type="button" class="ordering-topic-btn" data-topic="letters" aria-pressed="false">Chữ A→Z</button>
+    </div>
+  </header>
+
+  <main class="game-area ordering-area">
+    <div class="ordering-status" id="orderingStatus" aria-live="polite">Chọn chủ đề và click các thẻ theo thứ tự.</div>
+
+    <div class="ordering-cards" id="orderingCards" role="group" aria-label="Các thẻ cần sắp xếp theo thứ tự">
+      <!-- Thẻ do JS render -->
+    </div>
+
+    <div class="ordering-actions">
+      <button type="button" class="btn ordering-btn ordering-btn-replay" id="orderingBtnReplay">Chơi lại</button>
+      <button type="button" class="btn ordering-btn ordering-btn-topic" id="orderingBtnTopic">Chủ đề khác</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/ordering/shared.js"></script>
+  <script src="js/ordering/game.js"></script>
+  <script src="js/ordering/main.js"></script>
+</body>
+</html>

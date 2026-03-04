@@ -110,13 +110,13 @@ KidsGame/
 
 ## 7. Các bước triển khai (checklist)
 
-- [ ] **Bước 1:** Tạo `plans/ordering-plan.md` (file này).
-- [ ] **Bước 2:** Tạo `ordering.html` (meta, chủ đề, slots + cards area, footer).
-- [ ] **Bước 3:** Thêm CSS .page-ordering, .ordering-slots, .ordering-card, .ordering-slot.
-- [ ] **Bước 4:** Viết `js/ordering/shared.js` (getTopicData, shuffle, isOrderCorrect).
-- [ ] **Bước 5:** Viết `js/ordering/game.js` (initGame, onCardDrop hoặc onCardClickOrder, checkComplete, resetGame).
-- [ ] **Bước 6:** Viết `js/ordering/main.js` (chọn chủ đề, gắn drag/drop hoặc click).
-- [ ] **Bước 7:** Thêm link game trên `index.html`; test Số / Chữ, hoàn thành, Chơi lại.
+- [x] **Bước 1:** Tạo `plans/ordering-plan.md` (file này).
+- [x] **Bước 2:** Tạo `ordering.html` (meta, chủ đề, slots + cards area, footer).
+- [x] **Bước 3:** Thêm CSS .page-ordering, .ordering-slots, .ordering-card, .ordering-slot.
+- [x] **Bước 4:** Viết `js/ordering/shared.js` (getTopicData, shuffle, isOrderCorrect).
+- [x] **Bước 5:** Viết `js/ordering/game.js` (initGame, onCardClickOrder, checkComplete, resetGame).
+- [x] **Bước 6:** Viết `js/ordering/main.js` (chọn chủ đề, gắn click theo thứ tự).
+- [x] **Bước 7:** Thêm link game trên `index.html`; sitemap.xml.
 - [ ] **Bước 8:** Test responsive, accessibility.
 
 ---

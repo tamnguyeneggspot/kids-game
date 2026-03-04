@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game lật thẻ đôi cho bé - Memory Match học chữ, số, màu</title>
+  <meta name="description" content="Game lật thẻ đôi (Memory Match) cho bé: chơi hai người, tìm cặp thẻ chữ cái, số hoặc màu sắc. Trò chơi rèn trí nhớ, học chữ số màu vui nhộn, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta name="keywords" content="game lật thẻ đôi, memory match, game ghép cặp, game cho bé, học chữ số màu, game rèn trí nhớ, game giáo dục, trò chơi cho trẻ em">
+  <link rel="canonical" href="https://kid.aiti9.com/memory.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/memory.html">
+  <meta property="og:title" content="Game lật thẻ đôi cho bé - Memory Match học chữ, số, màu">
+  <meta property="og:description" content="Game lật thẻ đôi (Memory Match) cho bé: chơi hai người, tìm cặp thẻ chữ cái, số hoặc màu sắc. Trò chơi rèn trí nhớ, học chữ số màu vui nhộn, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game lật thẻ đôi cho bé - Memory Match học chữ, số, màu">
+  <meta name="twitter:description" content="Game lật thẻ đôi (Memory Match) cho bé: chơi hai người, tìm cặp thẻ chữ cái, số hoặc màu sắc. Trò chơi rèn trí nhớ, học chữ số màu vui nhộn, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-memory">
+  <header class="header">
+    <h1>Game lật thẻ đôi</h1>
+    <p class="page-intro">Chơi hai người: thay phiên lật hai thẻ tìm cặp giống nhau. Chọn bộ thẻ Chữ cái, Số hoặc Màu sắc rồi bắt đầu chơi.</p>
+    <div class="memory-deck-select" role="group" aria-label="Chọn bộ thẻ">
+      <button type="button" class="deck-btn active" data-deck="letters" aria-pressed="true">Chữ cái</button>
+      <button type="button" class="deck-btn" data-deck="numbers" aria-pressed="false">Số</button>
+      <button type="button" class="deck-btn" data-deck="colors" aria-pressed="false">Màu</button>
+    </div>
+    <p class="memory-turn" id="memoryTurn" aria-live="polite">Lượt của: Bé 🧒</p>
+    <p class="memory-scores" id="memoryScores">Bé: 0 — Người lớn: 0</p>
+  </header>
+
+  <main class="game-area">
+    <div class="memory-board" id="memoryBoard" role="group" aria-label="Bảng thẻ lật đôi">
+      <!-- Thẻ do JS tạo -->
+    </div>
+    <div class="memory-game-over" id="memoryGameOver" hidden>
+      <p>Hết game! Chúc mừng cả hai.</p>
+      <button type="button" class="btn" id="memoryBtnReplay">Chơi lại</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/memory/shared.js"></script>
+  <script src="js/memory/game.js"></script>
+  <script src="js/memory/main.js"></script>
+</body>
+</html>

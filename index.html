@@ -24,31 +24,64 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-home">
-  <header class="header">
-    <h1>Game giáo dục cho bé</h1>
-    <p class="intro">Trang web game cho bé hoàn toàn miễn phí, giúp trẻ học số, bảng chữ cái và màu sắc qua trò chơi vui nhộn. Chọn game bên dưới để bắt đầu học mà chơi, chơi mà học!</p>
-  </header>
-  <main class="menu">
-    <a href="counting.html" class="game-card game-counting">
-      <span class="game-icon">🔢</span>
-      <h2>Game số đếm cho bé</h2>
-      <p>Học đếm từ 1 đến 10: nhìn đồ vật, nghe số, chọn số đúng và so sánh nhiều ít. Phù hợp bé mầm non.</p>
-    </a>
-    <a href="alphabet.html" class="game-card game-alphabet">
-      <span class="game-icon">🔤</span>
-      <h2>Game bảng chữ cái</h2>
-      <p>Học chữ cái tiếng Việt: nghe phát âm, ghép chữ với hình, sắp xếp A–Z. Giúp bé làm quen chữ trước khi vào lớp 1.</p>
-    </a>
-    <a href="color.html" class="game-card game-color">
-      <span class="game-icon">🎨</span>
-      <h2>Game màu sắc cho bé</h2>
-      <p>Nhận biết màu sắc: học tên màu, nghe và chọn màu đúng. Game đơn giản cho bé 3 tuổi trở lên.</p>
-    </a>
-  </main>
+  <div class="page-home-wrap">
+    <header class="header header-home">
+      <div class="header-inner">
+        <h1 class="header-title">Game giáo dục cho bé</h1>
+        <p class="header-tagline">Học mà chơi, chơi mà học</p>
+        <p class="intro">Trang web game cho bé hoàn toàn miễn phí — học số, bảng chữ cái và màu sắc qua trò chơi vui nhộn. Chọn game bên dưới để bắt đầu.</p>
+      </div>
+    </header>
 
-  <footer class="footer">
-    <a href="index.html" class="link-home">← Về trang chủ</a>
-  </footer>
+    <main class="main-home">
+      <section class="games-section" aria-label="Danh sách game">
+        <h2 class="games-section-title">Chọn game để chơi</h2>
+        <ul class="menu game-grid" role="list">
+          <li><a href="counting.html" class="game-card game-counting">
+            <span class="game-icon" aria-hidden="true">🔢</span>
+            <span class="game-title">Game số đếm cho bé</span>
+            <span class="game-desc">Học đếm 1–10: nhìn đồ vật, nghe số, chọn số đúng và so sánh nhiều ít. Phù hợp bé mầm non.</span>
+          </a></li>
+          <li><a href="alphabet.html" class="game-card game-alphabet">
+            <span class="game-icon" aria-hidden="true">🔤</span>
+            <span class="game-title">Game bảng chữ cái</span>
+            <span class="game-desc">Học chữ cái tiếng Việt: nghe phát âm, ghép chữ với hình, sắp xếp A–Z. Làm quen chữ trước khi vào lớp 1.</span>
+          </a></li>
+          <li><a href="color.html" class="game-card game-color">
+            <span class="game-icon" aria-hidden="true">🎨</span>
+            <span class="game-title">Game màu sắc cho bé</span>
+            <span class="game-desc">Nhận biết màu: học tên màu, nghe và chọn màu đúng. Đơn giản cho bé 3 tuổi trở lên.</span>
+          </a></li>
+          <li><a href="memory.html" class="game-card game-memory">
+            <span class="game-icon" aria-hidden="true">🃏</span>
+            <span class="game-title">Game lật thẻ đôi</span>
+            <span class="game-desc">Chơi hai người: tìm cặp thẻ chữ cái, số hoặc màu. Rèn trí nhớ cùng bé.</span>
+          </a></li>
+          <li><a href="puzzle.html" class="game-card game-puzzle">
+            <span class="game-icon" aria-hidden="true">🧩</span>
+            <span class="game-title">Ghép hình cho bé</span>
+            <span class="game-desc">Ảnh cắt 4–9 mảnh, bé đổi chỗ để ghép. Rèn tư duy không gian, nhận diện hình.</span>
+          </a></li>
+          <li><a href="spot-difference.html" class="game-card game-spot-diff">
+            <span class="game-icon" aria-hidden="true">🔍</span>
+            <span class="game-title">Tìm điểm khác biệt</span>
+            <span class="game-desc">Hai hình gần giống nhau, bé bấm vào chỗ khác để đánh dấu. Rèn quan sát và so sánh.</span>
+          </a></li>
+          <li><a href="listen-tap.html" class="game-card game-listen-tap">
+            <span class="game-icon" aria-hidden="true">👂</span>
+            <span class="game-title">Nghe và chọn đúng</span>
+            <span class="game-desc">Nghe phát âm chữ, số hoặc màu rồi chọn đáp án đúng. Rèn kỹ năng nghe – nhận diện.</span>
+          </a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer footer-home">
+      <a href="index.html" class="link-home">← Về trang chủ</a>
+      <p class="footer-copy">Game cho bé · Miễn phí · Không quảng cáo</p>
+    </footer>
+  </div>
+
   <script src="js/music.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/settings-ui.js"></script>

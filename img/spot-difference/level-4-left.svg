@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-label="Canh 4 - Hinh A">
+  <rect x="0" y="0" width="600" height="400" fill="#fef3c7"/>
+  <!-- Wall -->
+  <rect x="0" y="0" width="600" height="280" fill="#fef9c3"/>
+  <!-- Floor -->
+  <rect x="0" y="280" width="600" height="120" fill="#d6d3d1"/>
+  <!-- Table -->
+  <rect x="180" y="220" width="240" height="18" rx="4" fill="#a16207" stroke="#78350f" stroke-width="2"/>
+  <rect x="200" y="238" width="200" height="12" fill="#78716c"/>
+  <!-- Lamp - on (yellow) -->
+  <g transform="translate(280 100)">
+    <rect x="-12" y="0" width="24" height="100" fill="#57534e" rx="4"/>
+    <circle cx="0" cy="-25" r="35" fill="#fde047" stroke="#f59e0b" stroke-width="3"/>
+  </g>
+  <!-- Picture frame - landscape -->
+  <g transform="translate(380 140)">
+    <rect x="-50" y="-35" width="100" height="70" fill="#fff" stroke="#78716c" stroke-width="4"/>
+    <rect x="-42" y="-27" width="84" height="54" fill="#93c5fd"/>
+  </g>
+  <!-- Plant - green leaves -->
+  <g transform="translate(150 240)">
+    <rect x="-15" y="40" width="30" height="50" fill="#78350f" rx="6"/>
+    <ellipse cx="0" cy="20" rx="40" ry="25" fill="#22c55e"/>
+    <ellipse cx="-25" cy="35" rx="22" ry="18" fill="#4ade80"/>
+    <ellipse cx="28" cy="30" rx="20" ry="16" fill="#4ade80"/>
+  </g>
+</svg>

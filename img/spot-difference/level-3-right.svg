@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-label="Canh 3 - Hinh B">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="sand3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#fcd34d"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="600" height="260" fill="url(#sky3)"/>
+  <rect x="0" y="260" width="600" height="140" fill="url(#sand3)"/>
+  <!-- Sun DIFF: orange, no rays -->
+  <circle cx="120" cy="90" r="45" fill="#f97316" stroke="#ea580c" stroke-width="4"/>
+  <!-- Umbrella DIFF: blue -->
+  <g transform="translate(300 180)">
+    <path d="M 0 0 L -50 -90 L 0 -70 L 50 -90 Z" fill="#3b82f6" stroke="#2563eb" stroke-width="3"/>
+    <rect x="-8" y="-70" width="16" height="120" fill="#78716c" stroke="#57534e" stroke-width="2"/>
+  </g>
+  <!-- Ball DIFF: red -->
+  <circle cx="470" cy="290" r="28" fill="#ef4444" stroke="#b91c1c" stroke-width="4"/>
+  <!-- Sea -->
+  <rect x="0" y="240" width="600" height="60" fill="#0ea5e9" opacity="0.5"/>
+</svg>

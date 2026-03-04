@@ -26,7 +26,11 @@
 | 1.4 | **Trang Màu sắc (color.html)** | ☑ | Đã có title, description, canonical, OG – kiểm tra lại |
 | | – Kiểm tra title/description đã đủ từ khóa chưa | ☑ | Có thể bổ sung "game cho bé 3 tuổi", "mầm non" |
 | | – Thêm H1/H2 + đoạn mô tả trong body nếu chưa có | ☑ | |
-| 1.5 | **Chung** | ☑ | |
+| 1.5 | **Trang Lật thẻ đôi (games/memory.html)** | ☑ | |
+| | – Title: "Game lật thẻ đôi cho bé - Memory Match học chữ, số, màu" (hoặc tương tự) | ☑ | |
+| | – Meta description, keywords, canonical, OG, Twitter (giống pattern alphabet.html) | ☑ | Từ khóa: game lật thẻ, memory match, game cho bé, học chữ số màu |
+| | – H1/H2 + mô tả ngắn trong trang | ☑ | |
+| 1.6 | **Chung** | ☑ | |
 | | – Viewport: `<meta name="viewport" content="width=device-width, initial-scale=1.0">` | ☑ | Mobile-friendly |
 | | – Favicon + ảnh OG (og.png) đã có và đúng URL | ☑ | |
 | | – Alt text cho mọi ảnh (nếu có) | ☑ | Không có thẻ img trong HTML |
@@ -44,7 +48,7 @@
 | | – Nén ảnh (WebP/PNG tối ưu), giảm dung lượng nhạc nền nếu lớn | ⚠ | Cần kiểm tra thủ công khi deploy |
 | | – Minify CSS/JS (hoặc dùng build step) nếu nhiều file | ⚠ | Có thể dùng build tool khi cần |
 | 2.3 | **Sitemap & robots** | ☑ | |
-| | – Tạo `sitemap.xml` liệt kê: trang chủ + counting, alphabet, color | ☑ | |
+| | – Tạo `sitemap.xml` liệt kê: trang chủ + counting, alphabet, color, **games/memory** | ☑ | |
 | | – Tạo `robots.txt`: Allow /, trỏ Sitemap: https://kid.aiti9.com/sitemap.xml | ☑ | |
 
 ---
@@ -58,6 +62,7 @@
 | | – Số đếm: "game số đếm cho bé", "học đếm cho bé", "game đếm số" | ☑ | Đã có trong title, H1, keywords |
 | | – Chữ cái: "bảng chữ cái cho bé", "game học chữ", "học chữ cái" | ☑ | Đã có trong title, H1, keywords |
 | | – Màu sắc: "game màu sắc cho bé", "học màu cho bé", "nhận biết màu" | ☑ | Đã có trong title, H1, keywords |
+| | – Lật thẻ đôi (Memory): "game lật thẻ đôi", "memory match cho bé", "game ghép cặp", "học chữ số màu qua game" | ☑ | Trang games/memory.html |
 | 3.2 | **Mở rộng từ khóa dài** (tùy chọn) | ☑ | |
 | | – "game cho bé 3 tuổi", "game mầm non", "trò chơi giáo dục miễn phí" | ☑ | Đã có trong descriptions, không nhồi nhét |
 
@@ -71,7 +76,7 @@
 | | – Thêm property https://kid.aiti9.com/ | 📋 | search.google.com/search-console - Cần thực hiện thủ công |
 | | – Xác minh (DNS hoặc file HTML) | 📋 | Chọn 1 trong 3 cách: file HTML, DNS, hoặc thẻ meta |
 | | – Gửi Sitemap URL | 📋 | Gửi: https://kid.aiti9.com/sitemap.xml |
-| | – Dùng "Kiểm tra URL" cho trang chủ + 3 trang game | 📋 | Yêu cầu lập chỉ mục cho 4 trang |
+| | – Dùng "Kiểm tra URL" cho trang chủ + 4 trang game (counting, alphabet, color, memory) | 📋 | Yêu cầu lập chỉ mục cho 5 trang |
 | 4.2 | **Theo dõi** | 📋 | Bắt đầu sau 1-2 tuần |
 | | – Xem "Hiệu suất" (truy vấn, vị trí, CTR) mỗi 1–2 tuần | 📋 | Kiểm tra Performance trong Search Console |
 | | – Sửa title/description theo truy vấn thực tế người dùng tìm | 📋 | Tối ưu dựa trên dữ liệu từ khóa thực tế |

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game ghép hình cho bé - Puzzle Jigsaw học tư duy không gian</title>
+  <meta name="description" content="Game ghép hình đơn giản cho bé: ảnh cắt thành 4–9 mảnh, kéo thả hoặc click đổi chỗ để ghép. Trò chơi rèn tư duy không gian, nhận diện hình, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta name="keywords" content="game ghép hình, puzzle cho bé, jigsaw trẻ em, game tư duy không gian, game giáo dục, trò chơi cho bé">
+  <link rel="canonical" href="https://kid.aiti9.com/puzzle.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/puzzle.html">
+  <meta property="og:title" content="Game ghép hình cho bé - Puzzle Jigsaw học tư duy không gian">
+  <meta property="og:description" content="Game ghép hình đơn giản cho bé: ảnh cắt thành 4–9 mảnh, kéo thả hoặc click đổi chỗ để ghép. Trò chơi rèn tư duy không gian, nhận diện hình, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game ghép hình cho bé - Puzzle Jigsaw học tư duy không gian">
+  <meta name="twitter:description" content="Game ghép hình đơn giản cho bé: ảnh cắt thành 4–9 mảnh, kéo thả hoặc click đổi chỗ để ghép. Trò chơi rèn tư duy không gian, nhận diện hình, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-puzzle">
+  <header class="header">
+    <h1>Ghép hình cho bé</h1>
+    <p class="page-intro">Chọn độ khó và hình ảnh. Chỉ mảnh cạnh ô trống mới kéo được; kéo thả vào ô trống (hoặc click mảnh đó) để di chuyển. Ghép xong sẽ có tiếng khen!</p>
+    <div class="puzzle-difficulty" role="group" aria-label="Chọn độ khó">
+      <button type="button" class="puzzle-diff-btn active" data-pieces="4" aria-pressed="true">4 ô (2×2)</button>
+      <button type="button" class="puzzle-diff-btn" data-pieces="9" aria-pressed="false">9 ô (3×3)</button>
+    </div>
+    <p class="puzzle-board-hint" id="puzzleBoardHint">Bảng hiện tại: 5 ô (gồm 1 ô trống). Chọn nút trên để đổi.</p>
+    <div class="puzzle-image-select" role="group" aria-label="Chọn hình ghép">
+      <p class="puzzle-image-label">Chọn hình:</p>
+      <div class="puzzle-image-grid" id="puzzleImageGrid">
+        <!-- Nút chọn ảnh do JS tạo -->
+      </div>
+    </div>
+  </header>
+
+  <main class="game-area">
+    <div class="puzzle-board-wrap">
+      <div class="puzzle-board" id="puzzleBoard" role="group" aria-label="Bảng ghép hình">
+        <!-- Mảnh ghép do JS tạo -->
+      </div>
+    </div>
+    <div class="puzzle-complete" id="puzzleComplete" hidden>
+      <p class="puzzle-complete-msg" aria-live="polite">Bé đã ghép xong! 🎉</p>
+      <div class="puzzle-complete-actions">
+        <button type="button" class="btn puzzle-btn-replay" id="puzzleBtnReplay">Chơi lại</button>
+        <button type="button" class="btn puzzle-btn-another" id="puzzleBtnAnother">Hình khác</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/puzzle/shared.js"></script>
+  <script src="js/puzzle/game.js"></script>
+  <script src="js/puzzle/main.js"></script>
+</body>
+</html>

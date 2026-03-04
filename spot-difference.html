@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game tìm điểm khác biệt cho bé - Spot the difference miễn phí</title>
+  <meta name="description" content="Game tìm điểm khác biệt cho bé: hai bức hình gần giống nhau, bé bấm vào chỗ khác để đánh dấu. Trò chơi rèn quan sát và so sánh, miễn phí cho trẻ mầm non và tiểu học.">
+  <meta name="keywords" content="game tìm điểm khác biệt, spot the difference cho bé, game quan sát, game giáo dục, trò chơi cho trẻ em, game miễn phí">
+  <link rel="canonical" href="https://kid.aiti9.com/spot-difference.html">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kid.aiti9.com/spot-difference.html">
+  <meta property="og:title" content="Game tìm điểm khác biệt cho bé - Spot the difference miễn phí">
+  <meta property="og:description" content="Game tìm điểm khác biệt cho bé: hai bức hình gần giống nhau, bé bấm vào chỗ khác để đánh dấu. Rèn quan sát và so sánh, chơi miễn phí.">
+  <meta property="og:image" content="https://kid.aiti9.com/img/og.png">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Game cho bé">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game tìm điểm khác biệt cho bé - Spot the difference miễn phí">
+  <meta name="twitter:description" content="Hai bức hình gần giống nhau, bé bấm vào chỗ khác để đánh dấu. Rèn quan sát và so sánh, chơi miễn phí.">
+  <meta name="twitter:image" content="https://kid.aiti9.com/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-spot-diff">
+  <header class="header">
+    <h1>Tìm điểm khác biệt</h1>
+    <p class="page-intro">Có 2–3 điểm khác nhau trong hai bức hình. Con hãy bấm vào <strong>hình bên phải</strong> để tìm đủ nhé!</p>
+
+    <div class="spot-diff-topbar" role="group" aria-label="Chọn cặp hình và tiến độ">
+      <label class="spot-diff-level-label" for="spotDiffLevelSelect">Cặp hình:</label>
+      <select id="spotDiffLevelSelect" class="spot-diff-level-select" aria-label="Chọn cặp hình">
+        <!-- Options do JS tạo -->
+      </select>
+      <span class="spot-diff-progress" id="spotDiffProgress" aria-live="polite">Đã tìm: 0 / 0</span>
+    </div>
+  </header>
+
+  <main class="game-area spot-diff-area">
+    <div class="spot-diff-images" aria-label="Hai bức hình để tìm điểm khác biệt">
+      <div class="spot-diff-image">
+        <img id="spotDiffImageLeft" class="spot-diff-img" alt="Hình A" loading="eager">
+      </div>
+      <div class="spot-diff-image spot-diff-image-right" id="spotDiffImageRightWrap">
+        <img id="spotDiffImageRight" class="spot-diff-img" alt="Hình B (bấm vào điểm khác biệt)" loading="eager">
+        <div id="spotDiffHitLayer" class="spot-diff-hit-layer"></div>
+      </div>
+    </div>
+
+    <div class="spot-diff-status" id="spotDiffStatus" aria-live="polite"></div>
+
+    <div class="spot-diff-actions">
+      <button type="button" class="btn spot-diff-btn spot-diff-btn-replay" id="spotDiffBtnReplay">Chơi lại</button>
+      <button type="button" class="btn spot-diff-btn spot-diff-btn-another" id="spotDiffBtnAnother">Cặp khác</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="link-home">← Về trang chủ</a>
+  </footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/settings-ui.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/diem.js"></script>
+  <script src="js/spot-difference/shared.js"></script>
+  <script src="js/spot-difference/game.js"></script>
+  <script src="js/spot-difference/main.js"></script>
+</body>
+</html>
+

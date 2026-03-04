@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-label="Canh 2 - Hinh A">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="ground2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bbf7d0"/>
+      <stop offset="1" stop-color="#86efac"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="600" height="270" fill="url(#sky2)"/>
+  <rect x="0" y="270" width="600" height="130" fill="url(#ground2)"/>
+
+  <!-- Simple building -->
+  <g transform="translate(250 120)">
+    <rect x="0" y="35" width="220" height="190" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
+    <rect x="0" y="35" width="220" height="44" rx="14" fill="#a78bfa" opacity="0.9"/>
+    <rect x="25" y="95" width="80" height="70" rx="10" fill="#93c5fd" stroke="#3b82f6" stroke-width="4"/>
+    <line x1="65" y1="95" x2="65" y2="165" stroke="#3b82f6" stroke-width="4"/>
+    <line x1="25" y1="130" x2="105" y2="130" stroke="#3b82f6" stroke-width="4"/>
+    <rect x="140" y="115" width="55" height="110" rx="12" fill="#a16207" stroke="#7c2d12" stroke-width="5"/>
+    <circle cx="185" cy="175" r="5" fill="#fef3c7"/>
+  </g>
+
+  <!-- Balloon -->
+  <g transform="translate(135 280)">
+    <path d="M 0 0 C -30 -55 35 -70 20 -10 C 10 20 -10 20 0 0 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="5"/>
+    <path d="M 10 18 L 0 35 L -10 18" fill="#b91c1c" opacity="0.55"/>
+    <path d="M 0 35 C -10 75 -40 110 -70 150" fill="none" stroke="#6b7280" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bird -->
+  <g transform="translate(490 205)" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -22 0 Q -6 -14 10 0"/>
+    <path d="M 10 0 Q 26 -14 42 0"/>
+    <circle cx="8" cy="-6" r="3" fill="#2563eb" stroke="none"/>
+  </g>
+
+  <!-- Tree for decoration -->
+  <g transform="translate(120 190)">
+    <rect x="-12" y="70" width="24" height="70" rx="10" fill="#a16207" stroke="#7c2d12" stroke-width="5"/>
+    <circle cx="0" cy="55" r="42" fill="#22c55e" stroke="#16a34a" stroke-width="6"/>
+  </g>
+</svg>

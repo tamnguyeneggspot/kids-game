@@ -21,35 +21,110 @@ body {
 .footer { margin-top: auto; padding: 1rem; }
 
 /* ---- Trang chủ ---- */
-.page-home .header h1 { font-size: 2rem; margin: 0 0 0.25rem 0; }
-.page-home .header p { margin: 0; color: #555; }
-
-.menu {
+.page-home {
+  padding: 0;
+}
+.page-home-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  max-width: 600px;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-home .header-home {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.page-home .header-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.page-home .header-title {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.page-home .header-tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b4ce6;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+}
+.page-home .intro {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.page-home .main-home {
+  width: 100%;
+  flex: 1;
+}
+.games-section {
+  width: 100%;
+}
+.games-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Grid danh sách game */
+.menu.game-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  justify-items: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu.game-grid li {
+  width: 100%;
+  max-width: 280px;
 }
 
 .game-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  min-height: 180px;
-  padding: 1.5rem;
+  justify-content: flex-start;
+  min-height: 160px;
+  padding: 1.35rem 1.25rem;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 4px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 3px solid transparent;
+  text-align: center;
+  height: 100%;
 }
-.game-card:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
-.game-card:focus-visible { outline: 3px solid #6b4ce6; outline-offset: 4px; }
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+.game-card:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 4px;
+}
 
 .game-card.game-counting { border-color: #6b4ce6; }
 .game-card.game-counting:hover { border-color: #8b6cf6; }
@@ -60,10 +135,55 @@ body {
 .game-card.game-color { border-color: #ec4899; }
 .game-card.game-color:hover { border-color: #f472b6; }
 
-.game-icon { font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1; }
+.game-card.game-memory { border-color: #8b5cf6; }
+.game-card.game-memory:hover { border-color: #a78bfa; }
+
+.game-card.game-puzzle { border-color: #10b981; }
+.game-card.game-puzzle:hover { border-color: #34d399; }
+
+.game-card.game-spot-diff { border-color: #f59e0b; }
+.game-card.game-spot-diff:hover { border-color: #fbbf24; }
+
+.game-card.game-listen-tap { border-color: #06b6d4; }
+.game-card.game-listen-tap:hover { border-color: #22d3ee; }
+
+.game-icon {
+  font-size: 2.75rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+  display: block;
+}
+.game-title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.3;
+}
+.game-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+/* Giữ tương thích nếu trang khác dùng .game-card h2 / .game-card p */
 .game-card h2 { margin: 0 0 0.25rem 0; font-size: 1.35rem; }
 .game-card p { margin: 0; font-size: 0.95rem; color: #666; }
 
+.page-home .footer-home {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(107, 76, 230, 0.15);
+  width: 100%;
+}
+.footer-copy {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
 .link-home {
   color: #6b4ce6;
   font-weight: 600;
@@ -740,6 +860,7 @@ body {
 .btn {
   font-size: 1.1rem;
   font-weight: 700;
+  font-family: inherit;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 14px;
@@ -1070,9 +1191,937 @@ body {
 }
 
 @media (max-width: 480px) {
-  .game-card { min-width: 160px; min-height: 150px; }
+  .game-card { min-width: 0; min-height: 140px; }
+  .menu.game-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .menu.game-grid li { max-width: 100%; }
+  .page-home-wrap { padding: 1rem 0.75rem 1.5rem; }
+  .page-home .header-title { font-size: 1.5rem; }
   .object-item { font-size: 2rem; }
   .choice-btn { min-width: 56px; min-height: 56px; font-size: 1.35rem; }
   .webgame-settings { top: 0.5rem; right: 0.5rem; }
   .webgame-settings-panel { min-width: 240px; }
 }
+
+/* ========== Trang Game Lật thẻ đôi (Memory Match) ========== */
+.page-memory {
+  padding: 1rem 0.75rem 2rem;
+}
+.page-memory .header {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+.page-memory .header h1 {
+  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  margin: 0 0 0.35rem 0;
+  color: #2d3748;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.page-memory .page-intro {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #4a5568;
+  margin: 0 0 1rem 0;
+}
+
+/* Chọn bộ thẻ */
+.memory-deck-select {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.deck-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 3px solid #c9b8f0;
+  border-radius: 14px;
+  background: #fff;
+  color: #5a4cb8;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s, color 0.2s;
+}
+.deck-btn:hover {
+  border-color: #6b4ce6;
+  background: #f5f0ff;
+  color: #6b4ce6;
+  transform: scale(1.03);
+}
+.deck-btn.active {
+  border-color: #6b4ce6;
+  background: #6b4ce6;
+  color: #fff;
+}
+.deck-btn:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 2px;
+}
+
+/* Lượt chơi & điểm */
+.memory-turn {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #2d3748;
+  padding: 0.4rem 0.75rem;
+  background: linear-gradient(135deg, #f8f6ff 0%, #ede9fc 100%);
+  border-radius: 12px;
+  display: inline-block;
+  border: 2px solid #e8e0f5;
+}
+.memory-scores {
+  margin: 0 0 1rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4a5568;
+}
+
+/* Khu vực game */
+.page-memory .game-area {
+  max-width: 420px;
+  width: 100%;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(107, 76, 230, 0.12);
+  border: 3px solid #e8e0f5;
+}
+
+/* Bảng thẻ - grid 4x4 cố định */
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0.25rem;
+}
+
+/* Thẻ - flip 3D */
+.memory-card {
+  position: relative;
+  aspect-ratio: 1;
+  min-height: 64px;
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  overflow: hidden;
+  transition: transform 0.2s;
+  perspective: 600px;
+  transform-style: preserve-3d;
+}
+.memory-card:hover:not(.matched):not(.flipped) {
+  transform: scale(1.04);
+}
+.memory-card:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 2px;
+}
+.memory-card.matched {
+  cursor: default;
+}
+
+/* Mặt trước / sau - stack và flip */
+.memory-card .memory-card-front,
+.memory-card .memory-card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.35s ease;
+}
+
+.memory-card .memory-card-front {
+  background: linear-gradient(145deg, #7c3aed 0%, #6b4ce6 50%, #5b3cd6 100%);
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(107, 76, 230, 0.35);
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.memory-card .memory-card-front::before {
+  content: '?';
+}
+
+.memory-card .memory-card-back {
+  background: #fff;
+  border: 3px solid #c9b8f0;
+  color: #2d3748;
+  font-size: 1.35rem;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transform: rotateY(180deg);
+}
+
+.memory-card.flipped .memory-card-front {
+  transform: rotateY(-180deg);
+}
+.memory-card.flipped .memory-card-back {
+  transform: rotateY(0);
+}
+
+.memory-card.matched .memory-card-back {
+  border-color: #22c55e;
+  background: linear-gradient(145deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  box-shadow: 0 2px 10px rgba(34, 197, 94, 0.25);
+}
+
+/* Ẩn chữ "?" trong front để chỉ dùng ::before (tránh lặp) */
+.memory-card .memory-card-front {
+  font-size: 0;
+}
+.memory-card .memory-card-front::before {
+  font-size: 1.75rem;
+}
+
+/* Nội dung thẻ màu */
+.memory-card-color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  border-radius: 12px;
+}
+.memory-card-color-name {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  text-shadow: 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.2);
+  margin-top: 0.2rem;
+}
+
+/* Game over */
+.memory-game-over {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f0ebfa 0%, #ede9fc 100%);
+  border-radius: 16px;
+  border: 3px solid #c9b8f0;
+}
+.memory-game-over p {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+.page-memory .memory-game-over .btn {
+  background: #6b4ce6;
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.page-memory .memory-game-over .btn:hover {
+  background: #5a3dd4;
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .memory-board {
+    gap: 0.5rem;
+    max-width: 280px;
+  }
+  .memory-card {
+    min-height: 56px;
+  }
+  .memory-card .memory-card-front::before {
+    font-size: 1.5rem;
+  }
+  .memory-card .memory-card-back {
+    font-size: 1.15rem;
+  }
+}
+
+/* ========== Trang Game Ghép hình (Puzzle) ========== */
+.page-puzzle {
+  padding: 1rem 0.75rem 2rem;
+}
+.page-puzzle .header {
+  margin-bottom: 1rem;
+  max-width: 36rem;
+}
+.page-puzzle .header h1 {
+  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  margin: 0 0 0.35rem 0;
+  color: #2d3748;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.page-puzzle .page-intro {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #4a5568;
+  margin: 0 0 1rem 0;
+}
+
+/* Chọn độ khó */
+.puzzle-difficulty {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.puzzle-diff-btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 3px solid #c9b8f0;
+  border-radius: 14px;
+  background: #fff;
+  color: #5a4cb8;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s, color 0.2s;
+}
+.puzzle-diff-btn:hover {
+  border-color: #6b4ce6;
+  background: #f5f0ff;
+  color: #6b4ce6;
+  transform: scale(1.03);
+}
+.puzzle-diff-btn.active {
+  border-color: #6b4ce6;
+  background: #6b4ce6;
+  color: #fff;
+}
+.puzzle-diff-btn:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 2px;
+}
+.puzzle-board-hint {
+  margin: -0.5rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* Chọn hình */
+.puzzle-image-select {
+  margin-bottom: 1rem;
+}
+.puzzle-image-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 0 0 0.5rem 0;
+}
+.puzzle-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.puzzle-image-btn {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 3px solid #c9b8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+}
+.puzzle-image-btn:hover {
+  border-color: #6b4ce6;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(107, 76, 230, 0.25);
+}
+.puzzle-image-btn.active {
+  border-color: #6b4ce6;
+  box-shadow: 0 0 0 3px rgba(107, 76, 230, 0.35);
+}
+.puzzle-image-btn:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 2px;
+}
+
+/* Khu vực game */
+.page-puzzle .game-area {
+  max-width: 420px;
+  width: 100%;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(107, 76, 230, 0.12);
+  border: 3px solid #e8e0f5;
+}
+.puzzle-board-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+.puzzle-board {
+  display: grid;
+  gap: 2px;
+  padding: 4px;
+  background: #e8e0f5;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+/* 4 mảnh: 5 ô, lưới 2×3 — ô trống (item 5) dưới bên phải */
+.puzzle-board.puzzle-cols-2.puzzle-rows-3 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 260px;
+}
+/* 6 mảnh: 7 ô; 9 mảnh: 10 ô */
+.puzzle-board.puzzle-cols-3.puzzle-rows-3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 280px;
+}
+.puzzle-board.puzzle-cols-3.puzzle-rows-4 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  max-width: 280px;
+}
+.puzzle-piece {
+  aspect-ratio: 1;
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 100px;
+  max-height: 100px;
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  background-color: #f8f6ff;
+  border: 2px solid #c9b8f0;
+  border-radius: 8px;
+  cursor: default;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+.puzzle-piece.puzzle-piece-movable {
+  cursor: grab;
+}
+.puzzle-piece.puzzle-piece-movable:hover:not(.correct) {
+  transform: scale(1.03);
+  border-color: #6b4ce6;
+  box-shadow: 0 2px 8px rgba(107, 76, 230, 0.2);
+}
+.puzzle-piece.correct {
+  border-color: #22c55e;
+  cursor: default;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+.puzzle-piece:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 2px;
+}
+.puzzle-piece-dragging {
+  opacity: 0.85;
+  cursor: grabbing;
+}
+/* Ô trống (empty space) */
+.puzzle-empty {
+  aspect-ratio: 1;
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 100px;
+  max-height: 100px;
+  background-color: #e8e4f4;
+  border: 2px dashed #c9b8f0;
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.puzzle-empty-drag-over {
+  border-color: #6b4ce6;
+  box-shadow: 0 0 0 3px rgba(107, 76, 230, 0.4);
+  background-color: #ede9fc;
+}
+
+/* Panel hoàn thành */
+.puzzle-complete {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f0ebfa 0%, #ede9fc 100%);
+  border-radius: 16px;
+  border: 3px solid #c9b8f0;
+}
+.puzzle-complete-msg {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+.puzzle-complete-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.page-puzzle .puzzle-btn-replay,
+.page-puzzle .puzzle-btn-another {
+  padding: 0.65rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.page-puzzle .puzzle-btn-replay {
+  background: #6b4ce6;
+  color: #fff;
+}
+.page-puzzle .puzzle-btn-replay:hover {
+  background: #5a3dd4;
+  transform: scale(1.05);
+}
+.page-puzzle .puzzle-btn-another {
+  background: #fff;
+  color: #6b4ce6;
+  border: 3px solid #6b4ce6;
+}
+.page-puzzle .puzzle-btn-another:hover {
+  background: #6b4ce6;
+  color: #fff;
+  transform: scale(1.05);
+}
+.page-puzzle .puzzle-btn-replay:focus-visible,
+.page-puzzle .puzzle-btn-another:focus-visible {
+  outline: 3px solid #333;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .puzzle-piece,
+  .puzzle-empty {
+    min-width: 52px;
+    min-height: 52px;
+    max-width: 88px;
+    max-height: 88px;
+  }
+  .puzzle-board.puzzle-cols-2 { max-width: 220px; }
+  .puzzle-board.puzzle-cols-3 { max-width: 240px; }
+}
+
+/* ========== Trang Game Tìm điểm khác biệt (Spot the difference) ========== */
+.page-spot-diff {
+  padding: 1rem 0.75rem 2rem;
+}
+.page-spot-diff .header {
+  margin-bottom: 1rem;
+  max-width: 44rem;
+}
+.page-spot-diff .header h1 {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  margin: 0 0 0.35rem 0;
+  color: #2d3748;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.page-spot-diff .page-intro {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #4a5568;
+  margin: 0 0 1rem 0;
+}
+
+.spot-diff-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+.spot-diff-level-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4a5568;
+}
+.spot-diff-level-select {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 2px solid #c9b8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+}
+.spot-diff-level-select:focus {
+  outline: none;
+  border-color: #6b4ce6;
+}
+.spot-diff-progress {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #6b4ce6;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f8f6ff 0%, #ede9fc 100%);
+  border: 2px solid #e8e0f5;
+}
+
+.spot-diff-area {
+  max-width: 980px;
+  width: 100%;
+  padding: 1.25rem 1rem;
+  border-radius: 24px;
+  border: 3px solid #e8e0f5;
+  box-shadow: 0 10px 40px rgba(107, 76, 230, 0.12);
+}
+
+.spot-diff-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+.spot-diff-image {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid #e8e0f5;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+.spot-diff-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.spot-diff-image-right {
+  border-color: #c9b8f0;
+}
+
+.spot-diff-hit-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.spot-diff-hit-zone {
+  position: absolute;
+  pointer-events: auto;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.15s ease;
+}
+.spot-diff-hit-zone:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 3px rgba(107, 76, 230, 0.35);
+}
+.spot-diff-hit-zone:focus-visible {
+  outline: 3px solid #6b4ce6;
+  outline-offset: 3px;
+}
+.spot-diff-hit-zone.found {
+  cursor: default;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.65);
+}
+.spot-diff-hit-zone.found::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  font-weight: 900;
+  color: #16a34a;
+  text-shadow: 0 1px 0 #fff, 0 2px 10px rgba(0,0,0,0.18);
+}
+
+.spot-diff-status {
+  margin-top: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 0.75rem;
+  border-radius: 14px;
+  background: #f8f6ff;
+  border: 2px solid #e8e0f5;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spot-diff-status.is-success {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+.spot-diff-status.is-error {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.spot-diff-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+.spot-diff-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: 12px;
+  transition: transform 0.15s, background 0.2s, color 0.2s, border-color 0.2s;
+}
+.spot-diff-btn-replay {
+  background: #6b4ce6;
+  color: #fff;
+  border: none;
+}
+.spot-diff-btn-replay:hover { background: #5a3dd4; transform: scale(1.05); }
+.spot-diff-btn-another {
+  background: #fff;
+  color: #6b4ce6;
+  border: 3px solid #6b4ce6;
+}
+.spot-diff-btn-another:hover { background: #6b4ce6; color: #fff; transform: scale(1.05); }
+.spot-diff-btn:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
+
+.spot-diff-miss {
+  animation: spot-diff-shake 0.35s ease;
+}
+@keyframes spot-diff-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@media (max-width: 720px) {
+  .spot-diff-images { grid-template-columns: 1fr; }
+  .spot-diff-area { padding: 1.1rem 0.9rem; }
+}
+
+/* ---- Trang Nghe và chọn (Listen & tap) ---- */
+.page-listen-tap { padding: 1rem 0.75rem 2rem; }
+.page-listen-tap .header { margin-bottom: 1rem; }
+.page-listen-tap .header h1 { font-size: clamp(1.5rem, 4vw, 1.9rem); margin: 0 0 0.25rem 0; }
+.page-listen-tap .page-intro { font-size: 0.95rem; margin: 0; color: #555; }
+
+.listen-tap-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.listen-tap-topic,
+.listen-tap-mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.listen-tap-topic-label,
+.listen-tap-mode-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.listen-tap-topic-btn,
+.listen-tap-mode-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid #c9b8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #5a4cb8;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.listen-tap-topic-btn:hover,
+.listen-tap-mode-btn:hover {
+  background: #ede9fc;
+  border-color: #6b4ce6;
+  color: #6b4ce6;
+}
+.listen-tap-topic-btn.active,
+.listen-tap-mode-btn.active {
+  background: #6b4ce6;
+  color: #fff;
+  border-color: #6b4ce6;
+}
+.listen-tap-topic-btn:focus-visible,
+.listen-tap-mode-btn:focus-visible { outline: 3px solid #6b4ce6; outline-offset: 2px; }
+
+.listen-tap-area {
+  max-width: 520px;
+  padding: 1.5rem 1.25rem;
+}
+
+.listen-tap-question {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.listen-tap-btn-hear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #1b5e20;
+  border: 3px solid #81c784;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+}
+.listen-tap-btn-hear:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.35);
+  background: #2e7d32;
+  color: #fff;
+  border-color: #2e7d32;
+}
+.listen-tap-btn-hear:focus-visible { outline: 3px solid #1b5e20; outline-offset: 3px; }
+.listen-tap-hear-icon { font-size: 1.5rem; line-height: 1; }
+.listen-tap-instruction {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.listen-tap-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 420px) {
+  .listen-tap-choices { grid-template-columns: repeat(2, 1fr); }
+}
+
+.listen-tap-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(88px, 22vw, 120px);
+  padding: 1rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-weight: 800;
+  border: 4px solid #c9b8f0;
+  border-radius: 20px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.listen-tap-card:hover {
+  transform: scale(1.03);
+  border-color: #6b4ce6;
+  background: #f8f6ff;
+  box-shadow: 0 4px 16px rgba(107, 76, 230, 0.2);
+}
+.listen-tap-card:focus-visible { outline: 3px solid #6b4ce6; outline-offset: 3px; }
+.listen-tap-card.correct {
+  border-color: #22c55e;
+  background: #dcfce7;
+  color: #166534;
+  pointer-events: none;
+  animation: listen-tap-pop 0.35s ease;
+}
+.listen-tap-card.wrong {
+  border-color: #ef4444;
+  background: #fee2e2;
+  color: #991b1b;
+  animation: spot-diff-shake 0.35s ease;
+}
+@keyframes listen-tap-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Thẻ màu: hiện ô màu + chữ */
+.listen-tap-card.listen-tap-card-color {
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.listen-tap-card-color .listen-tap-swatch {
+  display: block;
+  width: clamp(48px, 14vw, 72px);
+  height: clamp(48px, 14vw, 72px);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.listen-tap-card-color .listen-tap-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.listen-tap-score-wrap {
+  margin-bottom: 1rem;
+}
+.listen-tap-score {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #6b4ce6;
+}
+
+.listen-tap-summary {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f0ebfa;
+  border-radius: 16px;
+  border: 2px solid #c9b8f0;
+}
+.listen-tap-summary-text {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+.listen-tap-btn-replay {
+  padding: 0.65rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: #6b4ce6;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.listen-tap-btn-replay:hover { background: #5a3dd4; transform: scale(1.05); }
+.listen-tap-btn-replay:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
+
+.listen-tap-actions { margin-top: 0.5rem; }
+.listen-tap-btn-replay-secondary {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #fff;
+  color: #6b4ce6;
+  border: 2px solid #6b4ce6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.listen-tap-btn-replay-secondary:hover { background: #6b4ce6; color: #fff; transform: scale(1.03); }
+.listen-tap-btn-replay-secondary:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
